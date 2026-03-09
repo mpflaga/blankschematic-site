@@ -1,0 +1,19 @@
+baseURL = "https://blankschematic.com"
+title = "Blank Schematic"
+theme = "PaperMod"
+languageCode = "en-us"
+paginate = 10
+
+[params]
+  author = "mpflaga"
+  description = "Maker projects — electronics, 3D printing, networking, home automation"
+
+[menu]
+  [[menu.main]]
+    name = "Projects"
+    url = "/projects/"
+    weight = 1
+  [[menu.main]]
+    name = "GitHub"
+    url = "https://github.com/mpflaga"
+    weight = 2
