@@ -8,6 +8,7 @@ languageCode = "en-us"
 [params]
   author = "mpflaga"
   description = "Maker projects — electronics, 3D printing, networking, home automation"
+  formspreeId = "YOUR_FORM_ID"   # replace after signing up at formspree.io
 
 [menu]
   [[menu.main]]
@@ -18,3 +19,7 @@ languageCode = "en-us"
     name = "GitHub"
     url = "https://github.com/mpflaga"
     weight = 2
+  [[menu.main]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 3
