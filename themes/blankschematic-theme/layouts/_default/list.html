@@ -8,7 +8,7 @@
     </div>
 
     <div class="project-grid">
-      {{ range .Pages }}
+      {{ range .RegularPagesRecursive }}
       <a href="{{ .RelPermalink }}" class="card">
         <div class="card-thumb" style="{{ with .Params.thumbbg }}background:{{ . }}{{ else }}background:#1a1a1a{{ end }}">
           {{ with .Params.cover }}
