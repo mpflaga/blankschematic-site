@@ -12,8 +12,23 @@
 
       <div class="contact-mailto-card">
         <div class="contact-aside-label">// send an email</div>
-        <a href="mailto:support@blankschematic.com" class="contact-email-big">support@blankschematic.com</a>
+        <div class="contact-email-row">
+          <a href="mailto:support@blankschematic.com" class="contact-email-big">support@blankschematic.com</a>
+          <button class="copy-btn" data-copy="support@blankschematic.com" aria-label="Copy email address">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            <span>copy</span>
+          </button>
+        </div>
         <p class="contact-mailto-hint">Clicking the link opens your email client with the address pre-filled.</p>
+
+        <script>
+          document.querySelector('.copy-btn').addEventListener('click', function() {
+            navigator.clipboard.writeText(this.dataset.copy).then(() => {
+              this.querySelector('span').textContent = 'copied!';
+              setTimeout(() => this.querySelector('span').textContent = 'copy', 2000);
+            });
+          });
+        </script>
       </div>
 
       <aside class="contact-aside">
