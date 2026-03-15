@@ -184,14 +184,18 @@ nav.search-open .nav-search-bar { display: flex; }
   font-family: var(--bs-mono);
 }
 
-/* ── Hero (light) ── */
+/* ── Hero (light, split layout) ── */
 .hero-light {
   background: var(--bs-bg);
-  padding: 4rem 2rem 2.5rem;
 }
-.hero-inner {
-  max-width: 860px;
+.hero-split {
+  max-width: 1100px;
   margin: 0 auto;
+  padding: 3.5rem 2rem 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
 }
 .hero-eyebrow {
   font-family: var(--bs-mono);
@@ -199,25 +203,40 @@ nav.search-open .nav-search-bar { display: flex; }
   text-transform: uppercase;
   letter-spacing: 0.15em;
   color: var(--bs-muted);
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
 }
-.hero-h1 {
+.hero-headline {
   font-family: var(--bs-serif);
   font-style: italic;
-  font-size: clamp(2.4rem, 5vw, 3.5rem);
-  line-height: 1.1;
-  color: var(--bs-dark);
   font-weight: 400;
+  line-height: 1.05;
   margin-bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
 }
-.hero-h1 span {
-  color: var(--bs-orange);
+.hero-headline span {
+  display: block;
+  font-size: clamp(2.4rem, 4vw, 3.4rem);
+}
+.h-dream  { color: #029ecf; }
+.h-design { color: #ff7f00; }
+.h-make   { color: #8f6cb0; }
+.hero-tagline {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--bs-dark);
+  margin-bottom: 0.9rem;
+  line-height: 1.4;
 }
 .hero-desc {
-  font-size: 1.05rem;
+  font-size: 0.95rem;
   color: var(--bs-mid);
-  max-width: 560px;
-  line-height: 1.7;
+  line-height: 1.75;
+}
+.hero-art img {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
 }
 
 /* ── Tags ── */
@@ -638,9 +657,16 @@ nav.search-open .nav-search-bar { display: flex; }
 }
 
 /* ── Responsive ── */
+@media (max-width: 700px) {
+  .hero-split {
+    grid-template-columns: 1fr;
+    padding: 2rem 1rem 1.5rem;
+    gap: 1.5rem;
+  }
+  .hero-art { order: -1; }
+}
 @media (max-width: 600px) {
   nav { padding: 0 1rem; }
-  .hero-light { padding: 2.5rem 1rem 2rem; }
   .container { padding: 0 1rem; }
   .project-grid { grid-template-columns: 1fr; }
   .nav-links { gap: 1rem; }

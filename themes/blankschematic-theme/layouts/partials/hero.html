@@ -1,10 +1,20 @@
 <div class="hero-light">
-  <div class="hero-inner">
-    <div class="hero-eyebrow">// maker &middot; builder &middot; networker</div>
-    <h1 class="hero-h1">
-      {{ .Site.Params.heroTitle | default "Projects built in" }}<br>
-      <span>{{ .Site.Params.heroAccent | default "Lansing, Michigan" }}</span>
-    </h1>
-    <p class="hero-desc">{{ .Site.Params.heroSubtitle | default "Electronics, home automation, 3D printing, networking, and woodworking projects. Full documentation, source files, and build videos." }}</p>
+  <div class="hero-split">
+
+    <div class="hero-text">
+      <div class="hero-eyebrow">// maker &middot; builder &middot; networker</div>
+      <h1 class="hero-headline">
+        <span class="h-dream">Dream it.</span>
+        <span class="h-design">Design it.</span>
+        <span class="h-make">Make it.</span>
+      </h1>
+      <p class="hero-tagline">That's the rhythm that drives everything here.</p>
+      <p class="hero-desc">Projects built for museums, scout troops, homes, and whatever problem crossed the bench that week. Electronics, home automation, networking, 3D printing, woodworking, and more. Some projects are fully open source with every file included. Others are shared at whatever level we're able to. Either way, if there's something useful here for your build, take it &mdash; or reach out and ask.</p>
+    </div>
+
+    <div class="hero-art">
+      <img src="/images/hero-art.svg" alt="Dream it. Design it. Make it.">
+    </div>
+
   </div>
 </div>
