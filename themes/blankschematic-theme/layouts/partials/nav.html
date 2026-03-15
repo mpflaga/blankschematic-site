@@ -1,0 +1,11 @@
+<nav>
+  <a href="{{ "/" | relURL }}" class="nav-brand">blank<span>_</span>schematic</a>
+  <div class="nav-links">
+    {{ range .Site.Menus.main }}
+      <a href="{{ .URL }}">{{ .Name }}</a>
+    {{ end }}
+    {{ with .Site.Params.github }}
+      <a href="{{ . }}" target="_blank" rel="noopener">github ↗</a>
+    {{ end }}
+  </div>
+</nav>

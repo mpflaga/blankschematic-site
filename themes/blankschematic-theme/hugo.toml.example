@@ -1,0 +1,44 @@
+baseURL = "https://blankschematic.com"
+title = "Blank Schematic"
+theme = "blankschematic"
+languageCode = "en-us"
+defaultContentLanguage = "en"
+summaryLength = 20
+
+[params]
+  description  = "Maker projects, open source. Electronics, firmware, 3D printing, and networking."
+  author       = "michael flaga"
+  location     = "lansing, mi"
+  github       = "https://github.com/mpflaga"
+  heroTitle    = "maker projects,"
+  heroAccent   = "open source."
+  heroSubtitle = "Electronics, firmware, 3D printing, and networking projects from the Lansing Makers Network and beyond."
+
+  [[params.heroTags]]
+    label = "arduino"
+    color = "red"
+  [[params.heroTags]]
+    label = "esphome"
+    color = "blue"
+  [[params.heroTags]]
+    label = "bsa"
+    color = "orange"
+  [[params.heroTags]]
+    label = "openWRT"
+    color = "purple"
+  [[params.heroTags]]
+    label = "eagle pcb"
+    color = "gray"
+  [[params.heroTags]]
+    label = "3d printing"
+    color = "gray"
+
+[menu]
+  [[menu.main]]
+    name   = "projects"
+    url    = "/projects/"
+    weight = 1
+  [[menu.main]]
+    name   = "about"
+    url    = "/about/"
+    weight = 2

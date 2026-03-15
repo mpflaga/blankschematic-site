@@ -1,0 +1,12 @@
+name = "Blank Schematic"
+license = "MIT"
+licenselink = "https://opensource.org/licenses/MIT"
+description = "A minimal dark-accented maker portfolio theme for Hugo"
+homepage = "https://blankschematic.com"
+tags = ["portfolio", "maker", "projects", "minimal", "monospace"]
+features = ["portfolio", "project cards", "category badges", "responsive"]
+min_version = "0.110.0"
+
+[author]
+  name = "Michael Flaga"
+  homepage = "https://blankschematic.com"

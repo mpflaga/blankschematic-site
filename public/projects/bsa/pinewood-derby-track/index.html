@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Open Source Pinewood Derby Track · Blank Schematic</title>
+  <meta name="description" content="Maker projects — electronics, 3D printing, networking, home automation">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body><div class="color-bar">
+  <div class="cb-red"></div>
+  <div class="cb-blue"></div>
+  <div class="cb-orange"></div>
+  <div class="cb-purple"></div>
+  <div class="cb-dark"></div>
+</div>
+<nav>
+  <a href="/" class="nav-brand">blank<span>_</span>schematic</a>
+  <div class="nav-links">
+    
+      <a href="/projects/">Projects</a>
+    
+      <a href="https://github.com/mpflaga">GitHub</a>
+    
+    
+  </div>
+</nav>
+<main>
+
+<div class="container">
+  <article class="project-single">
+
+    <header class="project-header">
+      <div class="project-meta-top">
+        
+          
+            <span class="tag tag-bsa">bsa</span>
+          
+            <span class="tag tag-electronics">electronics</span>
+          
+        
+        
+          
+            <span class="tag tag-gray">arduino</span>
+          
+            <span class="tag tag-gray">eagle</span>
+          
+            <span class="tag tag-gray">pcb</span>
+          
+            <span class="tag tag-gray">cub-scouts</span>
+          
+            <span class="tag tag-gray">lmn</span>
+          
+            <span class="tag tag-gray">maker</span>
+          
+        
+      </div>
+      <h1 class="project-title">Open Source Pinewood Derby Track</h1>
+      <div class="project-byline">
+        <span class="card-date">April 13, 2015</span>
+        
+          <span class="status-pill status-complete">complete</span>
+        
+      </div>
+    </header>
+
+    
+
+    <div class="project-links">
+      
+        <a href="https://github.com/mpflaga/PineWoodDerbyTrack-Arduino" class="proj-link proj-link-github" target="_blank" rel="noopener">github ↗</a>
+      
+      
+        <a href="https://github.com/mpflaga/PineWoodDerby_Mega_Shield-Eagle" class="proj-link proj-link-github" target="_blank" rel="noopener">github (pcb) ↗</a>
+      
+      
+        <a href="https://hackaday.com/2015/04/13/an-open-source-pinewood-derby-track/" class="proj-link proj-link-hackaday" target="_blank" rel="noopener">hackaday ↗</a>
+      
+      
+        <a href="https://youtu.be/da9Q15YSw38" class="proj-link proj-link-youtube" target="_blank" rel="noopener">youtube ↗</a>
+      
+      
+      
+    </div>
+
+    <div class="project-content">
+      <h2 id="overview">Overview</h2>
+<p>The Lansing Makers Network needed a pinewood derby track that local cub scouts could use to test their racers during open shop hours. Rather than buy a commercial solution, we built a fully open source system from scratch — track, electronics, firmware, and PCB all included.</p>
+<p>The result is a 38-foot, 4-lane track with a solenoid-activated starting gate, IR timing sensors, and a custom display panel showing each lane&rsquo;s finishing position and elapsed time. Hackaday covered it in April 2015.</p>
+<h2 id="the-track">The Track</h2>
+<p>Five 8-foot sections of prefinished ¾&quot; 11-layer cabinet plywood connect end-to-end using 4&quot; lap joints, forming a continuous 38-foot run. The prefinished surface keeps friction low — fast cars have turned in times as low as 2.8 seconds over the 33-foot start-to-finish distance, with most racers averaging between 3.1 and 3.4 seconds.</p>
+<p>Four lanes are defined by ¼&quot; maple plywood strips acting as wheel guides. The final 4 feet after the finish line form a braking runoff — the lane guides raise an extra ½&quot; and are lined with 2mm craft foam to gently decelerate the cars without damaging them.</p>
+<h2 id="starting-gate">Starting Gate</h2>
+<p>The starting gate uses a plywood trap door mounted under the elevated starting area. Four pins protrude up through the track surface, holding each car in place. When the operator presses the start button (or pulls the remote trigger), a latching solenoid releases the trap door, dropping the pins and sending all four cars simultaneously.</p>
+<p>A sensor on the door detects when it has actually dropped, starting the race timer. Closing the door clears the display and readies the system for the next heat.</p>
+<p>A remote trigger — elastic phone cord, PVC pipe handle, and a red button — allows the race to be started away from the starting gate.</p>
+<h2 id="electronics--timing">Electronics &amp; Timing</h2>
+<p>The timing computer is built around an <strong>Arduino Mega 2560</strong> with a custom shield (Eagle files in the companion repo).</p>
+<p>IR reflective object sensors are embedded flush into the lane guides at both the starting gate and finish line. Each sensor has pull-up and current-limiting resistors soldered directly to it, with wiring run underneath the track sections. Connections use <strong>RJ45 modular jacks</strong> (standard telecom wall-plate style) recessed into the track sides — sturdy, flush, and connected via ordinary CAT-5 patch cables.</p>
+<p>The starting gate solenoid connects via an RCA jack; the remote trigger uses an RJ11 connector — different connector types prevent mis-cabling.</p>
+<p>Power is either a 12V DC wall supply (2.5mm barrel jack) or battery for portable use.</p>
+<h2 id="display-panel">Display Panel</h2>
+<p>The display panel mounts vertically behind the starting gate and shows results for all four lanes:</p>
+<ul>
+<li><strong>Large 2.3&quot; alphanumeric digits</strong> — driven by SPI-based HC595 shift registers — show finishing position per lane</li>
+<li><strong>Small 0.54&quot; quad alphanumeric digits</strong> — driven by I2C HT16K33 backpack modules — show elapsed time per lane</li>
+</ul>
+<p>All digits are mounted in a laser-cut ⅛&quot; plywood panel behind smoke-grey transparent acrylic, which diffuses the display for comfortable viewing in a variety of lighting conditions.</p>
+<p>The firmware also uses the displays for operational status: racers ready, lane missing a car, track not ready, race complete — making it easy for a single operator to run heats.</p>
+<h2 id="pcb">PCB</h2>
+<p>The Arduino shield was designed in <strong>Eagle CAD</strong> and provides:</p>
+<ul>
+<li>RJ45 breakout for start and finish sensor cables</li>
+<li>RCA and RJ11 connectors for solenoid and remote trigger</li>
+<li>HC595 SPI shift register chain for the large digit drivers</li>
+<li>I2C headers for HT16K33 backpack modules</li>
+<li>12V power input with onboard regulation</li>
+</ul>
+<p>Eagle schematic and board files are in the companion repository.</p>
+<h2 id="repositories">Repositories</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Repo</th>
+          <th>Contents</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><a href="https://github.com/mpflaga/PineWoodDerbyTrack-Arduino">PineWoodDerbyTrack-Arduino</a></td>
+          <td>Arduino Mega firmware</td>
+      </tr>
+      <tr>
+          <td><a href="https://github.com/mpflaga/PineWoodDerby_Mega_Shield-Eagle">PineWoodDerby_Mega_Shield-Eagle</a></td>
+          <td>Eagle PCB schematic and board files</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="coverage">Coverage</h2>
+<ul>
+<li><a href="https://hackaday.com/2015/04/13/an-open-source-pinewood-derby-track/">Hackaday — &ldquo;An Open Source Pinewood Derby Track&rdquo;</a> — April 13, 2015</li>
+<li><a href="https://youtu.be/da9Q15YSw38">YouTube demo video</a></li>
+</ul>
+<h2 id="photos">Photos</h2>
+<figure><img src="/images/projects/pinewood-derby/track-full.jpg"
+    alt="Full 38-foot track assembled">
+</figure>
+
+
+    </div>
+
+  </article>
+</div>
+
+
+  </main><footer class="footer">
+  <span>blank_schematic // mpflaga</span>
+  <span>lansing, mi</span>
+</footer>
+</body>
+</html>

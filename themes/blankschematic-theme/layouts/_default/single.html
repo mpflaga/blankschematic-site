@@ -1,0 +1,62 @@
+{{ define "main" }}
+
+<div class="container">
+  <article class="project-single">
+
+    <header class="project-header">
+      <div class="project-meta-top">
+        {{ with .Params.categories }}
+          {{ range . }}
+            <span class="tag tag-{{ . }}">{{ . }}</span>
+          {{ end }}
+        {{ end }}
+        {{ with .Params.tags }}
+          {{ range . }}
+            <span class="tag tag-gray">{{ . }}</span>
+          {{ end }}
+        {{ end }}
+      </div>
+      <h1 class="project-title">{{ .Title }}</h1>
+      <div class="project-byline">
+        <span class="card-date">{{ .Date.Format "January 2, 2006" }}</span>
+        {{ with .Params.status }}
+          <span class="status-pill status-{{ . }}">{{ . }}</span>
+        {{ end }}
+      </div>
+    </header>
+
+    {{ with .Params.cover }}
+    <div class="project-cover">
+      <img src="{{ . }}" alt="{{ $.Title }}">
+    </div>
+    {{ end }}
+
+    <div class="project-links">
+      {{ with .Params.github }}
+        <a href="{{ . }}" class="proj-link proj-link-github" target="_blank" rel="noopener">github ↗</a>
+      {{ end }}
+      {{ with .Params.github2 }}
+        <a href="{{ . }}" class="proj-link proj-link-github" target="_blank" rel="noopener">github (pcb) ↗</a>
+      {{ end }}
+      {{ with .Params.hackaday }}
+        <a href="{{ . }}" class="proj-link proj-link-hackaday" target="_blank" rel="noopener">hackaday ↗</a>
+      {{ end }}
+      {{ with .Params.youtube }}
+        <a href="{{ . }}" class="proj-link proj-link-youtube" target="_blank" rel="noopener">youtube ↗</a>
+      {{ end }}
+      {{ with .Params.makerworld }}
+        <a href="{{ . }}" class="proj-link proj-link-makerworld" target="_blank" rel="noopener">makerworld ↗</a>
+      {{ end }}
+      {{ with .Params.thingiverse }}
+        <a href="{{ . }}" class="proj-link proj-link-thingiverse" target="_blank" rel="noopener">thingiverse ↗</a>
+      {{ end }}
+    </div>
+
+    <div class="project-content">
+      {{ .Content }}
+    </div>
+
+  </article>
+</div>
+
+{{ end }}

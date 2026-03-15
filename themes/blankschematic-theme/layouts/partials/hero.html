@@ -1,0 +1,12 @@
+<div class="hero">
+  <div class="hero-circuit"></div>
+  <div class="hero-inner">
+    <h1>{{ .Site.Params.heroTitle | default "maker projects," }}<br><em>{{ .Site.Params.heroAccent | default "open source." }}</em></h1>
+    <p>{{ .Site.Params.heroSubtitle | default "Electronics, firmware, 3D printing, and networking projects." }}</p>
+    <div class="tag-row">
+      {{ range .Site.Params.heroTags }}
+        <span class="tag tag-{{ .color }}">{{ .label }}</span>
+      {{ end }}
+    </div>
+  </div>
+</div>

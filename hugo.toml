@@ -1,6 +1,6 @@
 baseURL = "https://blankschematic.com"
 title = "Blank Schematic"
-theme = "PaperMod"
+theme = "blankschematic-theme"
 languageCode = "en-us"
 [pagination]
   pagerSize = 10
