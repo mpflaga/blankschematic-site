@@ -6,8 +6,7 @@ languageCode = "en-us"
   pagerSize = 10
 
 [params]
-  author = "mpflaga"
-  description = "Maker projects — electronics, 3D printing, networking, home automation"
+description = "Maker projects — electronics, 3D printing, networking, home automation"
 
 [menu]
   [[menu.main]]
