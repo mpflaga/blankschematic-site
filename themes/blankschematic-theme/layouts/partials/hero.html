@@ -1,12 +1,10 @@
-<div class="hero">
-  <div class="hero-circuit"></div>
+<div class="hero-light">
   <div class="hero-inner">
-    <h1>{{ .Site.Params.heroTitle | default "maker projects," }}<br><em>{{ .Site.Params.heroAccent | default "open source." }}</em></h1>
-    <p>{{ .Site.Params.heroSubtitle | default "Electronics, firmware, 3D printing, and networking projects." }}</p>
-    <div class="tag-row">
-      {{ range .Site.Params.heroTags }}
-        <span class="tag tag-{{ .color }}">{{ .label }}</span>
-      {{ end }}
-    </div>
+    <div class="hero-eyebrow">// maker &middot; builder &middot; networker</div>
+    <h1 class="hero-h1">
+      {{ .Site.Params.heroTitle | default "Projects built in" }}<br>
+      <span>{{ .Site.Params.heroAccent | default "Lansing, Michigan" }}</span>
+    </h1>
+    <p class="hero-desc">{{ .Site.Params.heroSubtitle | default "Electronics, home automation, 3D printing, networking, and woodworking projects. Full documentation, source files, and build videos." }}</p>
   </div>
 </div>

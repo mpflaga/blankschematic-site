@@ -3,43 +3,66 @@
 {{- partial "hero.html" . -}}
 
 <div class="container">
+
+  {{/* ── Category grid ── */}}
+  {{ $catIcons := dict
+    "electronics"   "⚡"
+    "3d-printing"   "🖨️"
+    "networking"    "🌐"
+    "woodwork"      "🪵"
+    "bsa"           "⚜️"
+    "museum"        "🏛️"
+    "audio"         "🎵"
+    "arduino"       "🔌"
+    "micropython"   "🐍"
+    "raspberry-pi"  "🫐"
+  }}
   <section class="section">
     <div class="section-header">
-      <span class="section-title">featured projects</span>
+      <span class="section-title">categories</span>
       <div class="section-line"></div>
     </div>
+    <div class="cat-grid">
+      {{ range $name, $pages := .Site.Taxonomies.categories }}
+        {{ $slug := $name | urlize }}
+        {{ $icon := index $catIcons $slug | default "📁" }}
+        <a href="/categories/{{ $slug }}/" class="cat-card cat-{{ $slug }}">
+          <div class="cat-icon">{{ $icon }}</div>
+          <div class="cat-name">{{ $name }}</div>
+          <div class="cat-count">{{ len $pages }} project{{ if ne (len $pages) 1 }}s{{ end }}</div>
+        </a>
+      {{ end }}
+    </div>
+  </section>
 
-    <div class="project-grid">
-      {{ range where (where .Site.RegularPages "Type" "projects") "Params.status" "!=" "draft" }}
-      <a href="{{ .RelPermalink }}" class="card">
-        <div class="card-thumb" style="{{ with .Params.thumbbg }}background:{{ . }}{{ else }}background:#1a1a1a{{ end }}">
-          {{ with .Params.cover }}
-            <img src="{{ . }}" alt="{{ $.Title }}" style="width:100%;height:100%;object-fit:cover;">
-          {{ else }}
-            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="10" y="38" width="60" height="3" rx="1.5" fill="white" opacity="0.4"/>
-              <rect x="38" y="10" width="3" height="60" rx="1.5" fill="white" opacity="0.4"/>
-              <circle cx="40" cy="40" r="10" stroke="white" stroke-width="1.5" fill="none" opacity="0.5"/>
-              <circle cx="40" cy="40" r="3" fill="white" opacity="0.5"/>
-            </svg>
-          {{ end }}
-          {{ with .Params.categories }}
-            <span class="card-badge badge-{{ index . 0 }}">{{ index . 0 }}</span>
-          {{ end }}
+  {{/* ── Recent projects as rows ── */}}
+  <section class="section">
+    <div class="section-header">
+      <span class="section-title">recent projects</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="proj-row-list">
+      {{ range first 8 (where (where .Site.RegularPages "Type" "projects") "Params.status" "!=" "draft") }}
+      <a href="{{ .RelPermalink }}" class="proj-row">
+        <div class="proj-date">
+          {{ .Date.Format "Jan" }}<br>{{ .Date.Format "2006" }}
         </div>
-        <div class="card-body">
-          <div class="card-title">{{ .Title }}</div>
-          <div class="card-desc">{{ .Summary }}</div>
-          <div class="card-meta">
-            <span class="card-date">{{ .Date.Format "2006-01-02" }}</span>
-            <span class="card-status{{ if eq .Params.status "in-progress" }} wip{{ end }}"></span>
-          </div>
+        <div>
+          <div class="proj-title">{{ .Title }}</div>
+          <div class="proj-desc">{{ .Summary }}</div>
+        </div>
+        <div class="proj-tags">
+          {{ with .Params.tags }}
+            {{ range first 3 . }}
+              <span class="proj-tag">{{ . }}</span>
+            {{ end }}
+          {{ end }}
         </div>
       </a>
       {{ end }}
     </div>
-
   </section>
+
 </div>
 
 {{ end }}
