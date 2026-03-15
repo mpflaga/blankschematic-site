@@ -50,6 +50,9 @@
       {{ with .Params.thingiverse }}
         <a href="{{ . }}" class="proj-link proj-link-thingiverse" target="_blank" rel="noopener">thingiverse ↗</a>
       {{ end }}
+      {{ with .Params.docs }}
+        <a href="{{ . }}" class="proj-link proj-link-docs" target="_blank" rel="noopener">docs ↗</a>
+      {{ end }}
     </div>
 
     <div class="project-content">
