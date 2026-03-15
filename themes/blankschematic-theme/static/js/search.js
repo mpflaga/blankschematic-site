@@ -16,7 +16,7 @@
   async function initPagefind() {
     if (pagefind) return pagefind;
     try {
-      pagefind = await import('/_pagefind/pagefind.js');
+      pagefind = await import('/pagefind/pagefind.js');
       await pagefind.init();
       return pagefind;
     } catch (e) {
