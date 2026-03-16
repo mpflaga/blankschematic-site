@@ -19,10 +19,13 @@ Hugo static site deployed on Cloudflare Pages from a private GitHub repo.
 - A value should not appear in both `categories:` and `tags:` on the same project
 - Run this to check: `for f in content/projects/**/*.md; do cats=$(grep "^categories:" "$f" | sed 's/categories: \[//;s/\]//' | tr ',' '\n' | tr -d ' '); tags=$(grep "^tags:" "$f" | sed 's/tags: \[//;s/\]//' | tr ',' '\n' | tr -d ' '); for cat in $cats; do if echo "$tags" | grep -qx "$cat"; then echo "$(basename $f): '$cat' duplicate"; fi; done; done`
 
-### Draft Projects
-- Projects with `status: draft` are hidden from listings but still build
+### Draft / In-Progress Projects
+- `status: draft` — hidden from listings but still builds
+- `status: in-progress` — visible in listings, shown with a WIP indicator
+- `status: complete` — fully published
 - Current drafts: `furnace-monitor.md` (placeholder content — needs real write-up)
-- When ready: change `status: draft` → `status: complete`
+- Current in-progress: `mega-calculator-micropython.md`
+- When ready: change status to `complete`
 
 ### github2label
 - When adding a `github2:` link to a project, also add `github2label: "descriptive name ↗"`

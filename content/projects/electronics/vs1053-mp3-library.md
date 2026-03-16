@@ -2,7 +2,7 @@
 title: "VS1053 Arduino MP3 Library"
 date: 2017-06-04
 categories: [electronics, arduino, audio]
-tags: [audio, mp3, library, maker, spi, vs1053]
+tags: [mp3, library, maker, spi, vs1053]
 github: "https://github.com/mpflaga/Arduino_Library-vs1053_for_SdFat"
 docs: "https://mpflaga.github.io/Arduino_Library-vs1053_for_SdFat/"
 status: complete

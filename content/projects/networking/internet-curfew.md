@@ -3,7 +3,6 @@ title: "Per-Device Internet Curfew with nftables + Home Assistant"
 date: 2025-01-20
 categories: [networking]
 tags: [openwrt, nftables, home-assistant, parental-controls, firewall]
-github: ""
 status: complete
 summary: "Blocks internet access per-device on a schedule using OpenWRT nftables rules, with a Home Assistant dashboard toggle for manual overrides — no third-party apps or cloud dependency."
 ---

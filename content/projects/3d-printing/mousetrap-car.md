@@ -4,7 +4,6 @@ date: 2025-03-01
 categories: [3d-printing]
 tags: [bambu, makerworld, pla, physics, stem]
 makerworld: ""
-github: ""
 status: complete
 summary: "Physics project redesign with optimized axle geometry, revised wheel hubs, printable spring tensioner, and reinforced lever arm — 7 measurable improvements over the Thingiverse baseline."
 ---
