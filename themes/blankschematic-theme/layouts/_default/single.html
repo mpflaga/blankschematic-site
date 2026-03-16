@@ -7,7 +7,7 @@
       <div class="project-meta-top">
         {{ with .Params.categories }}
           {{ range . }}
-            <a href="/categories/{{ . | urlize }}/" class="tag tag-{{ . | urlize }}">{{ partial "cat-name.html" (. | urlize) }}</a>
+            <a href="/categories/{{ . | urlize }}/" class="proj-tag tag-{{ . | urlize }}">{{ partial "cat-name.html" (. | urlize) }}</a>
           {{ end }}
         {{ end }}
         {{ with .Params.tags }}
