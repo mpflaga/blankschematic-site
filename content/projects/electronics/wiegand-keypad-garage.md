@@ -4,6 +4,8 @@ date: 2024-09-01
 categories: [electronics, home-assistant]
 tags: [esphome, esp32, security, garage]
 status: complete
+cover: /images/projects/wiegand-keypad-garage.jpg
+photos: "https://photos.app.goo.gl/Lmsp3eky5WeWxhQ16"
 summary: "Secure garage door access via a Wiegand keypad wired to an ESP32 running ESPHome — PINs are stored as hashes in the config, never in plaintext."
 ---
 
