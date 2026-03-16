@@ -252,7 +252,9 @@ nav.search-open .nav-search-bar { display: flex; }
   padding: 4px 10px;
   border: 1px solid;
   border-radius: 3px;
+  transition: opacity 0.15s;
 }
+a.tag:hover { opacity: 0.7; }
 .tag-red       { color: var(--bs-red);    border-color: var(--bs-red); }
 .tag-blue      { color: var(--bs-blue);   border-color: var(--bs-blue); }
 .tag-orange    { color: var(--bs-orange); border-color: var(--bs-orange); }

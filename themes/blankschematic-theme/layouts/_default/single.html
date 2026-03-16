@@ -7,12 +7,12 @@
       <div class="project-meta-top">
         {{ with .Params.categories }}
           {{ range . }}
-            <span class="tag tag-{{ . }}">{{ . }}</span>
+            <a href="/categories/{{ . | urlize }}/" class="tag tag-{{ . | urlize }}">{{ . }}</a>
           {{ end }}
         {{ end }}
         {{ with .Params.tags }}
           {{ range . }}
-            <span class="tag tag-gray">{{ . }}</span>
+            <a href="/tags/{{ . | urlize }}/" class="tag tag-gray">{{ . }}</a>
           {{ end }}
         {{ end }}
       </div>
