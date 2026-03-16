@@ -652,10 +652,11 @@ nav.search-open .nav-search-bar { display: flex; }
   font-family: var(--bs-mono);
   font-size: 12px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  gap: 0.4rem;
   margin-top: 4rem;
 }
+.footer-copy { color: #444; font-size: 11px; }
 
 /* ── Contact Page ── */
 .contact-page { max-width: 900px; margin: 0 auto; padding: 3rem 0 4rem; }
