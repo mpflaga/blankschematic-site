@@ -4,6 +4,7 @@
   <section class="section">
     <div class="section-header">
       <span class="section-title">{{ .Title | lower }}</span>
+      <span class="section-count">{{ len .RegularPagesRecursive }} project{{ if ne (len .RegularPagesRecursive) 1 }}s{{ end }}</span>
       <div class="section-line"></div>
     </div>
 

@@ -1,0 +1,61 @@
+# Blank Schematic — Claude Project Notes
+
+## Site Overview
+Hugo static site deployed on Cloudflare Pages from a private GitHub repo.
+- Build command: `npm install && hugo --minify && npx pagefind --site public`
+- Live site: https://blankschematic.com
+- Theme: `themes/blankschematic-theme` (custom, built in this project)
+
+## Recurring Housekeeping Checklist
+
+### Categories
+- **Whenever a new project is added**, check that its `categories` values have:
+  - A display name entry in `layouts/partials/cat-name.html`
+  - An SVG icon in `layouts/partials/cat-icon.html`
+  - A color accent in `static/css/main.css` (`.cat-card.cat-<slug>::after`)
+  - A display name entry in `layouts/index.html` `$catNames` dict (now delegated to cat-name partial)
+
+### Tags vs Categories — No Duplicates
+- A value should not appear in both `categories:` and `tags:` on the same project
+- Run this to check: `for f in content/projects/**/*.md; do cats=$(grep "^categories:" "$f" | sed 's/categories: \[//;s/\]//' | tr ',' '\n' | tr -d ' '); tags=$(grep "^tags:" "$f" | sed 's/tags: \[//;s/\]//' | tr ',' '\n' | tr -d ' '); for cat in $cats; do if echo "$tags" | grep -qx "$cat"; then echo "$(basename $f): '$cat' duplicate"; fi; done; done`
+
+### Draft Projects
+- Projects with `status: draft` are hidden from listings but still build
+- Current drafts: `furnace-monitor.md` (placeholder content — needs real write-up)
+- When ready: change `status: draft` → `status: complete`
+
+### github2label
+- When adding a `github2:` link to a project, also add `github2label: "descriptive name ↗"`
+- Default fallback label is "github (2) ↗" which is not very informative
+
+### Images
+- Project cover images go in `static/images/projects/`
+- Google Photos shared links (`photos.app.goo.gl`) cannot be used as `cover:` — must download the image
+- Windows/WSL downloads create `*.Zone.Identifier` sidecar files — these are gitignored, just delete them
+- Compress images before committing if possible (target < 500 KB); use squoosh.app if no CLI tools available
+
+### Identity / Privacy
+- Author name removed from footer (user prefers minimal identity exposure)
+- Location removed from footer
+- `author` param removed from hugo.toml
+- GitHub repo is private
+
+### Slug Conventions
+- Category slugs use Hugo's `urlize` — spaces become hyphens, lowercase
+- Display names are looked up via `layouts/partials/cat-name.html`
+- When adding a new category, add it to cat-name.html, cat-icon.html, and the CSS accent color
+
+## Current Categories
+| Slug | Display Name | CSS Color |
+|---|---|---|
+| electronics | Electronics | `--bs-blue` |
+| arduino | Arduino | `--bs-blue` |
+| audio | Audio | `--bs-purple` |
+| bsa | BSA | `--bs-orange` |
+| museum | Museum | `#5a82b4` |
+| networking | Networking | `--bs-purple` |
+| 3d-printing | 3D Printing | `--bs-red` |
+| woodwork | Woodwork | `#8a6a50` |
+| micropython | MicroPython | `--bs-green` |
+| raspberry-pi | Raspberry Pi | `--bs-red` |
+| home-assistant | Home Assistant | `#18bcf2` |

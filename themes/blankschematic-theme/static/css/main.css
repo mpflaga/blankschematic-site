@@ -287,6 +287,15 @@ a.tag:hover { opacity: 0.7; }
   text-transform: uppercase;
   white-space: nowrap;
 }
+.section-count {
+  font-family: var(--bs-mono);
+  font-size: 11px;
+  color: var(--bs-surface);
+  background: var(--bs-muted);
+  padding: 2px 8px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
 .section-line {
   flex: 1;
   height: 1px;
