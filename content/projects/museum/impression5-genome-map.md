@@ -1,7 +1,7 @@
 ---
 title: "Impression 5 Genome / Plant Migration Map"
 date: 2021-07-19
-categories: [museum, electronics]
+categories: [museum, electronics, arduino]
 tags: [arduino, rfid, led, maker, lmn, impression5, interactive]
 github: "https://github.com/mpflaga/Impression5-GenomeMap-Arduino"
 github2: "https://github.com/mpflaga/Impression5-GenomeMap-Demo-Arduino"
