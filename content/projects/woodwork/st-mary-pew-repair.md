@@ -10,7 +10,7 @@ summary: "Structural reinforcement of all 1,400 seating positions across the ori
 
 ## Overview
 
-The pews at [St. Mary Cathedral](https://www.stmarycathedral.org) in Lansing, Michigan were installed during the church's 1968 renovation. Over the decades, the structural joints and supports across all 1,400 seating positions had experienced varying degrees of wear and loosening — some requiring minor reinforcement, others more substantial repair.
+The pews at [St. Mary Cathedral](https://stmarylansing.org/) in Lansing, Michigan were installed during the church's 1968 renovation. Over the decades, the structural joints and supports across all 1,400 seating positions had experienced varying degrees of wear and loosening — some requiring minor reinforcement, others more substantial repair.
 
 Each pew was individually assessed and reinforced as needed, restoring structural integrity throughout the entire seating area of the cathedral.
 
