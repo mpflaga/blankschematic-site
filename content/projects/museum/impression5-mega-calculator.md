@@ -7,6 +7,7 @@ github: "https://github.com/mpflaga/Impression5-Mega_Calculator-Arduino"
 status: complete
 cover: /images/projects/impression5-mega-calculator.jpg
 photos: "https://photos.app.goo.gl/XNn8b7yQw7ESP8pJ8"
+docs: "https://docs.google.com/presentation/d/12m6RvQxXhAlx5gTluuJth5hYQA74dV7i/edit?usp=sharing&ouid=104702284015253160705&rtpof=true&sd=true"
 summary: "Arduino Mega replacement for Impression 5 Science Center's giant calculator exhibit — custom LED display and keypad controller using big-number arithmetic."
 ---
 
