@@ -2,7 +2,7 @@
 title: "Arduino MemoryFree Library"
 date: 2012-11-08
 categories: [electronics, arduino]
-tags: [arduino, library, maker, avr]
+tags: [library, maker, avr]
 github: "https://github.com/mpflaga/Arduino-MemoryFree"
 status: complete
 summary: "Arduino library for measuring free RAM at runtime — critical for debugging out-of-memory crashes on AVR boards with as little as 2 KB of RAM."

@@ -2,7 +2,7 @@
 title: "Arduino PhotoCell Array Averaged Library"
 date: 2022-01-30
 categories: [electronics, arduino]
-tags: [arduino, library, sensors, analog, photocell, ldr, maker]
+tags: [library, sensors, analog, photocell, ldr, maker]
 github: "https://gist.github.com/mpflaga/91e45f9539b6cd1ebc58fedae70eb33c"
 status: complete
 summary: "Arduino library for reading an array of photocell (LDR) sensors with a sliding-window moving average and configurable threshold detection — supports multiple sensors with individual sample rates."

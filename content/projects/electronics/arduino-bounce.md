@@ -2,7 +2,7 @@
 title: "Arduino Bounce Debounce Library"
 date: 2013-08-06
 categories: [electronics, arduino]
-tags: [arduino, library, maker, buttons]
+tags: [library, maker, buttons]
 github: "https://github.com/mpflaga/Arduino-Bounce"
 status: complete
 summary: "Arduino button debouncing library — filters mechanical contact noise so a single button press registers as exactly one event in firmware."
