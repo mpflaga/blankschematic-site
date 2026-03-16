@@ -2,9 +2,10 @@
 title: "Artemis Spaceship Bridge Console — Multi-Joystick Firmware"
 date: 2016-01-01
 categories: [electronics]
-tags: [arduino, lmn, maker, hid, joystick, gaming]
+tags: [arduino, lmn, maker, hid, joystick, gaming, role-playing-game, bridge-simulator, artemis]
 github: "https://github.com/mpflaga/Artemis23consoleMultiJoyStick-Arduino"
 status: complete
+photos: "https://photos.app.goo.gl/AJAEkeWEWCe7FiBy8"
 summary: "Arduino firmware for the Lansing Makers Network's Artemis Spaceship Bridge Simulator exhibit — drives a multi-joystick physical console for the cooperative spaceship bridge game."
 ---
 
