@@ -31,7 +31,9 @@ Hugo static site deployed on Cloudflare Pages from a private GitHub repo.
 ### Images
 - Project cover images go in `static/images/projects/`
 - Google Photos shared links (`photos.app.goo.gl`) cannot be used as `cover:` — must download the image
-- Windows/WSL downloads create `*.Zone.Identifier` sidecar files — these are gitignored, just delete them
+- Windows/WSL downloads create `filename.jpg:Zone.Identifier` sidecar files (colon-separated, NTFS alternate data stream)
+- The `.gitignore` pattern is `*Zone.Identifier` (no dot prefix — the colon before `Zone` means `*.Zone.Identifier` won't match)
+- If one appears in VS Code source control: `rm "path/to/file:Zone.Identifier"` to delete it
 - Compress images before committing if possible (target < 500 KB); use squoosh.app if no CLI tools available
 
 ### Identity / Privacy
