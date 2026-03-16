@@ -36,7 +36,7 @@
         <a href="{{ . }}" class="proj-link proj-link-github" target="_blank" rel="noopener">github ↗</a>
       {{ end }}
       {{ with .Params.github2 }}
-        <a href="{{ . }}" class="proj-link proj-link-github" target="_blank" rel="noopener">github (pcb) ↗</a>
+        <a href="{{ . }}" class="proj-link proj-link-github" target="_blank" rel="noopener">{{ $.Params.github2label | default "github (2) ↗" }}</a>
       {{ end }}
       {{ with .Params.hackaday }}
         <a href="{{ . }}" class="proj-link proj-link-hackaday" target="_blank" rel="noopener">hackaday ↗</a>

@@ -5,6 +5,7 @@ categories: [electronics, networking, home-assistant]
 tags: [esphome, sonoff, iot, watchdog]
 github: "https://gist.github.com/mpflaga/9bc5586a42d191477e4ba077c710f765"
 github2: "https://gist.github.com/mpflaga/122e71bd98a08bac979af1131cce5680"
+github2label: "github (api watchdog) ↗"
 status: complete
 summary: "Two ESPHome configs for a SONOFF S31 smart plug that auto power-cycles a device when it stops responding — one using ICMP ping loss detection, one using Home Assistant API connection loss."
 ---

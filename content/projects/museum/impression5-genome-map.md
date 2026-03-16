@@ -4,7 +4,11 @@ date: 2021-07-19
 categories: [museum, electronics]
 tags: [arduino, rfid, led, maker, lmn, impression5, interactive]
 github: "https://github.com/mpflaga/Impression5-GenomeMap-Arduino"
+github2: "https://github.com/mpflaga/Impression5-GenomeMap-Demo-Arduino"
+github2label: "github (demo) ↗"
 status: complete
+cover: /images/projects/impression-5-genome-map.jpg
+photos: "https://photos.app.goo.gl/ZSywspWpcvun5nEw8"
 summary: "Interactive museum exhibit at Impression 5 Science Center — visitors use RFID tablets to explore botanical migration routes on a lit map, with green/red LED feedback guiding correct selections."
 ---
 
@@ -34,6 +38,13 @@ The system is built around an Arduino with:
 
 The PCB foundation is the **[Impression 5 SMASH Shield](https://github.com/mpflaga/Impression5-SMASH-Shield-Eagle)** — an Eagle CAD Arduino Mega shield designed specifically for Impression 5 exhibits, providing standardized connectors for display, input, and power wiring.
 
+## Repositories
+
+| Repo | Contents |
+|------|----------|
+| [Impression5-GenomeMap-Arduino](https://github.com/mpflaga/Impression5-GenomeMap-Arduino) | Delivered exhibit firmware |
+| [Impression5-GenomeMap-Demo-Arduino](https://github.com/mpflaga/Impression5-GenomeMap-Demo-Arduino) | Quick proof of concept |
+
 ## Photos
 
-[View build photos](https://photos.app.goo.gl/fCmJiQYdHpRWAx1X9)
+[View the photo album on Google Photos ↗](https://photos.app.goo.gl/ZSywspWpcvun5nEw8)

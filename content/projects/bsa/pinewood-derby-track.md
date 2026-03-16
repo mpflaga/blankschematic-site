@@ -5,6 +5,7 @@ categories: [bsa, electronics]
 tags: [arduino, eaglecad, pcb, cub-scouts, lmn, maker]
 github: "https://github.com/mpflaga/PineWoodDerbyTrack-Arduino"
 github2: "https://github.com/mpflaga/PineWoodDerby_Mega_Shield-Eagle"
+github2label: "github (pcb) ↗"
 hackaday: "https://hackaday.com/2015/04/13/an-open-source-pinewood-derby-track/"
 youtube: "https://youtu.be/da9Q15YSw38"
 status: complete
