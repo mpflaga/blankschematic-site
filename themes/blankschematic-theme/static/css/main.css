@@ -652,7 +652,7 @@ a.tag:hover { opacity: 0.7; }
 .cat-card.cat-museum        .cat-icon svg { color: #5a82b4; }
 .cat-card.cat-networking    .cat-icon svg { color: var(--bs-purple); }
 .cat-card.cat-3d-printing   .cat-icon svg { color: var(--bs-red); }
-.cat-card.cat-woodwork      .cat-icon svg { color: #8a6a50; }
+.cat-card.cat-woodwork      .cat-icon svg { color: #8a6a50; width: 3rem; height: 3rem; }
 .cat-card.cat-arduino       .cat-icon svg { color: var(--bs-blue); }
 .cat-card.cat-micropython   .cat-icon svg { color: var(--bs-green); }
 .cat-card.cat-audio         .cat-icon svg { color: var(--bs-purple); }
