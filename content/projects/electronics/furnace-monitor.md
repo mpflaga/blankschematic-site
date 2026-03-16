@@ -2,7 +2,7 @@
 title: "Furnace Monitor — Differential Pressure + Blink Code Detection"
 date: 2024-11-15
 categories: [electronics, home-assistant]
-tags: [esphome, esp32, kicad, home-assistant, pcb]
+tags: [esphome, esp32, kicad, pcb]
 github: ""
 status: complete
 summary: "ESP32 ESPHome device that monitors a Carrier furnace — reads a differential pressure sensor for filter restriction and a phototransistor to decode blink error codes from the status LED."

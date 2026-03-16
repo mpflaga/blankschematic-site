@@ -2,7 +2,7 @@
 title: "MicroPython Giant Calculator"
 date: 2025-12-27
 categories: [electronics, micropython]
-tags: [micropython, neopixel, maker, calculator, esp32, raspberry-pi-pico]
+tags: [neopixel, maker, calculator, esp32, raspberry-pi-pico]
 github: "https://github.com/mpflaga/Mega_Calculator_MicroPython"
 status: in-progress
 summary: "MicroPython rewrite of the Impression 5 giant calculator — 9-digit NeoPixel 7-segment display with 20 physical buttons, running on ESP32 or Raspberry Pi Pico."

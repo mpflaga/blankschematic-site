@@ -2,7 +2,7 @@
 title: "ChoreBoard — Raspberry Pi NeoPixel Chore Tracker"
 date: 2018-05-24
 categories: [electronics, raspberry-pi]
-tags: [raspberry-pi, neopixel, python, maker, led]
+tags: [neopixel, python, maker, led]
 github: "https://github.com/mpflaga/ChoreBoard-RaspberryPi"
 status: complete
 summary: "Raspberry Pi Zero W chore tracker — physical buttons and NeoPixel LEDs show daily task progress in a tactile, screen-free display for kids."

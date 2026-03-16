@@ -2,7 +2,7 @@
 title: "Impression 5 SMASH Shield PCB"
 date: 2019-07-22
 categories: [museum, electronics]
-tags: [arduino, pcb, eaglecad, museum, maker, lmn, impression5]
+tags: [arduino, pcb, eaglecad, maker, lmn, impression5]
 github: "https://github.com/mpflaga/Impression5-SMASH-Shield-Eagle"
 status: complete
 summary: "Eagle CAD Arduino Mega shield PCB designed for Impression 5 Science Center exhibits — standardizes wiring, connectors, and power for the Giant Calculator and Genome Map projects."

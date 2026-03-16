@@ -2,7 +2,7 @@
 title: "Impression 5 Genome / Plant Migration Map"
 date: 2021-07-19
 categories: [museum, electronics]
-tags: [arduino, rfid, led, museum, maker, lmn, impression5, interactive]
+tags: [arduino, rfid, led, maker, lmn, impression5, interactive]
 github: "https://github.com/mpflaga/Impression5-GenomeMap-Arduino"
 status: complete
 summary: "Interactive museum exhibit at Impression 5 Science Center — visitors use RFID tablets to explore botanical migration routes on a lit map, with green/red LED feedback guiding correct selections."

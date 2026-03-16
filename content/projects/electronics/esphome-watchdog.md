@@ -2,7 +2,7 @@
 title: "ESPHome Network & API Watchdog — Auto Power-Cycle with SONOFF S31"
 date: 2023-12-11
 categories: [electronics, networking, home-assistant]
-tags: [esphome, home-assistant, sonoff, networking, iot, watchdog]
+tags: [esphome, sonoff, iot, watchdog]
 github: "https://gist.github.com/mpflaga/9bc5586a42d191477e4ba077c710f765"
 github2: "https://gist.github.com/mpflaga/122e71bd98a08bac979af1131cce5680"
 status: complete

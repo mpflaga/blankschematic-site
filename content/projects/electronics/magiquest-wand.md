@@ -2,7 +2,7 @@
 title: "MagiQuest Wand Projects — From ATtiny85 to ESPHome"
 date: 2025-01-25
 categories: [electronics, home-assistant]
-tags: [arduino, ir, neopixel, magiquest, attiny, esphome, home-assistant]
+tags: [arduino, ir, neopixel, magiquest, attiny, esphome]
 github: "https://gist.github.com/mpflaga/ad8640589b4739bdb1a9b0abac68ef03"
 status: complete
 summary: "A 12-year arc of MagiQuest wand projects — from a DigiSpark ATtiny85 duel kiosk in 2013, through NeoPixel ring upgrades and a learn/simulate device, to a 2025 ESPHome Home Assistant sensor."
