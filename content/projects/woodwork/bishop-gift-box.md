@@ -5,13 +5,13 @@ categories: [woodwork]
 tags: [carpentry, gift, handcrafted, keepsake]
 status: complete
 cover: /images/projects/bishop-gift-box.jpg
-summary: "Handcrafted wooden presentation box housing two silver candlesticks and a copy of Les Misérables — a gift marking the ordination of Bishop Robert J. McClory."
+summary: "Handcrafted walnut presentation box with finger-jointed corners, flocked cedar interior, and custom mounts for four silver candlesticks and a copy of Les Misérables — a gift marking the ordination of Bishop Robert J. McClory."
 photos: "https://photos.app.goo.gl/gKcJRQk28cZSv5bCA"
 ---
 
 ## Overview
 
-A handcrafted wooden box built to present two silver candlesticks and a copy of *Les Misérables* — offered as a gift on the occasion of the ordination of **The Most Reverend Robert J. McClory** as Bishop of Gary, Indiana on February 11, 2020.
+A handcrafted wooden box built to present four silver candlesticks and a copy of *Les Misérables* — offered as a gift on the occasion of the ordination of **The Most Reverend Robert J. McClory** as Bishop of Gary, Indiana on February 11, 2020.
 
 The gift was presented on behalf of the Ascenzo, Flaga, Mullins, and Stonehill families.
 
@@ -25,10 +25,11 @@ The gift was chosen to reflect those same values as Reverend McClory stepped int
 
 The box was hand-built to fit the candlesticks and book as a unified presentation piece, intended to be kept as a lasting keepsake of the occasion.
 
-- **Body:** Dark walnut
-- **Floor:** Cedar
+- **Body:** Dark walnut with tight finger-jointed corners
+- **Floor:** Cedar, flocked interior
 - **Lid glazing:** Museum glass (ultra-low reflectivity, UV-blocking)
 - **Hardware:** Brass
+- **Interior:** Custom-fitted mounts for four silver candlesticks and the book
 
 ## Photos
 
