@@ -1,7 +1,7 @@
 ---
 title: "Wiegand Keypad Garage Door — PIN Hashing in ESPHome"
 date: 2024-09-01
-categories: [electronics]
+categories: [electronics, home-assistant]
 tags: [esphome, esp32, security, home-assistant, garage]
 github: ""
 status: complete

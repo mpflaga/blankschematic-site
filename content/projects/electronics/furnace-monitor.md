@@ -1,7 +1,7 @@
 ---
 title: "Furnace Monitor — Differential Pressure + Blink Code Detection"
 date: 2024-11-15
-categories: [electronics]
+categories: [electronics, home-assistant]
 tags: [esphome, esp32, kicad, home-assistant, pcb]
 github: ""
 status: complete

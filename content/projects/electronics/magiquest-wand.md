@@ -1,7 +1,7 @@
 ---
 title: "MagiQuest Wand Projects — From ATtiny85 to ESPHome"
 date: 2025-01-25
-categories: [electronics]
+categories: [electronics, home-assistant]
 tags: [arduino, ir, neopixel, magiquest, attiny, esphome, home-assistant]
 github: "https://gist.github.com/mpflaga/ad8640589b4739bdb1a9b0abac68ef03"
 status: complete
