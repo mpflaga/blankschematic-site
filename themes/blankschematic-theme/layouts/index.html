@@ -39,9 +39,9 @@
           <div class="proj-desc">{{ .Summary }}</div>
         </div>
         <div class="proj-tags">
-          {{ with .Params.tags }}
-            {{ range first 3 . }}
-              <span class="proj-tag">{{ . }}</span>
+          {{ with .Params.categories }}
+            {{ range . }}
+              <span class="proj-tag tag-{{ . | urlize }}">{{ partial "cat-name.html" (. | urlize) }}</span>
             {{ end }}
           {{ end }}
         </div>
