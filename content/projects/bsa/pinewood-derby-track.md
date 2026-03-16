@@ -10,12 +10,12 @@ youtube: "https://youtu.be/da9Q15YSw38"
 status: complete
 cover: /images/projects/pinewood_derby_track.jpg
 photos: "https://photos.app.goo.gl/9SQkkyfTubQTenpn8"
-summary: "A fully open source, 38-foot, 4-lane pinewood derby timing system built for Lansing Makers Network — Arduino Mega, custom PCB, IR sensors, solenoid starting gate, and 7-segment displays."
+summary: "A fully open source, 38-foot, 4-lane pinewood derby timing system built for Cub Scout Pack 2222 — Arduino Mega, custom PCB, IR sensors, solenoid starting gate, and 7-segment displays."
 ---
 
 ## Overview
 
-The Lansing Makers Network needed a pinewood derby track that local cub scouts could use to test their racers during open shop hours. Rather than buy a commercial solution, we built a fully open source system from scratch — track, electronics, firmware, and PCB all included.
+The Cub Scout Pack 2222 needed a pinewood derby track that local cub scouts could use to test their racers during open shop hours. Rather than buy a commercial solution, we built a fully open source system from scratch — track, electronics, firmware, and PCB all included.
 
 The result is a 38-foot, 4-lane track with a solenoid-activated starting gate, IR timing sensors, and a custom display panel showing each lane's finishing position and elapsed time. Hackaday covered it in April 2015.
 
