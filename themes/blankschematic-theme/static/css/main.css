@@ -613,7 +613,8 @@ nav.search-open .nav-search-bar { display: flex; }
 .cat-card.cat-arduino::after      { background: var(--bs-blue); }
 .cat-card.cat-micropython::after  { background: var(--bs-green); }
 .cat-card.cat-audio::after        { background: var(--bs-purple); }
-.cat-card.cat-raspberry-pi::after { background: var(--bs-red); }
+.cat-card.cat-raspberry-pi::after    { background: var(--bs-red); }
+.cat-card.cat-home-assistant::after  { background: #18bcf2; }
 
 /* ── Tag pills on cards ── */
 .card-tags {
