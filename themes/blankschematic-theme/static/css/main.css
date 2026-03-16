@@ -595,6 +595,13 @@ a.tag:hover { opacity: 0.7; }
   font-size: 1.7rem;
   margin-bottom: 0.6rem;
   line-height: 1;
+  display: flex;
+  align-items: center;
+}
+.cat-card .cat-icon svg {
+  width: 2rem;
+  height: 2rem;
+  color: var(--bs-mid);
 }
 .cat-card .cat-name {
   font-size: 14px;

@@ -5,19 +5,6 @@
 <div class="container">
 
   {{/* ── Category grid ── */}}
-  {{ $catIcons := dict
-    "electronics"   "⚡"
-    "3d-printing"   "🖨️"
-    "networking"    "🌐"
-    "woodwork"      "🪵"
-    "bsa"           "⚜️"
-    "museum"        "🏛️"
-    "audio"         "🎵"
-    "arduino"       "🔌"
-    "micropython"   "🐍"
-    "raspberry-pi"      "🫐"
-    "home-assistant"    "🏠"
-  }}
   <section class="section">
     <div class="section-header">
       <span class="section-title">categories</span>
@@ -26,9 +13,8 @@
     <div class="cat-grid">
       {{ range $name, $pages := .Site.Taxonomies.categories }}
         {{ $slug := $name | urlize }}
-        {{ $icon := index $catIcons $slug | default "📁" }}
         <a href="/categories/{{ $slug }}/" class="cat-card cat-{{ $slug }}">
-          <div class="cat-icon">{{ $icon }}</div>
+          <div class="cat-icon">{{ partial "cat-icon.html" $slug }}</div>
           <div class="cat-name">{{ $name }}</div>
           <div class="cat-count">{{ len $pages }} project{{ if ne (len $pages) 1 }}s{{ end }}</div>
         </a>
