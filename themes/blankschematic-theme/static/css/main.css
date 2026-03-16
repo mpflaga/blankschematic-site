@@ -436,6 +436,7 @@ nav.search-open .nav-search-bar { display: flex; }
 .proj-link-hackaday:hover     { border-color: var(--bs-orange); color: var(--bs-orange); }
 .proj-link-youtube:hover      { border-color: var(--bs-red); color: var(--bs-red); }
 .proj-link-makerworld:hover   { border-color: var(--bs-blue); color: var(--bs-blue); }
+.proj-link-photos:hover       { border-color: var(--bs-green); color: var(--bs-green); }
 
 /* ── Project Content (Markdown) ── */
 .project-content { max-width: 720px; }

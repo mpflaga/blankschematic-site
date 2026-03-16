@@ -8,6 +8,8 @@ github2: "https://github.com/mpflaga/PineWoodDerby_Mega_Shield-Eagle"
 hackaday: "https://hackaday.com/2015/04/13/an-open-source-pinewood-derby-track/"
 youtube: "https://youtu.be/da9Q15YSw38"
 status: complete
+cover: /images/projects/pinewood_derby_track.jpg
+photos: "https://photos.app.goo.gl/9SQkkyfTubQTenpn8"
 summary: "A fully open source, 38-foot, 4-lane pinewood derby timing system built for Lansing Makers Network — Arduino Mega, custom PCB, IR sensors, solenoid starting gate, and 7-segment displays."
 ---
 
@@ -77,6 +79,4 @@ Eagle schematic and board files are in the companion repository.
 
 ## Photos
 
-{{< figure src="/images/projects/pinewood-derby/track-full.jpg" alt="Full 38-foot track assembled" >}}
-
-<!-- Add photos from:
+[View the full photo album on Google Photos ↗](https://photos.app.goo.gl/9SQkkyfTubQTenpn8)
