@@ -1,7 +1,7 @@
 ---
 title: "Impression 5 Giant Calculator"
 date: 2020-03-05
-categories: [museum, electronics]
+categories: [museum, electronics, arduino]
 tags: [arduino, led, calculator, maker, lmn, impression5]
 github: "https://github.com/mpflaga/Impression5-Mega_Calculator-Arduino"
 status: complete
