@@ -1,0 +1,15 @@
+{{/* Usage: {{ partial "cat-name.html" "slug" }} */}}
+{{ $catNames := dict
+  "3d-printing"    "3D Printing"
+  "home-assistant" "Home Assistant"
+  "raspberry-pi"   "Raspberry Pi"
+  "bsa"            "BSA"
+  "electronics"    "Electronics"
+  "networking"     "Networking"
+  "woodwork"       "Woodwork"
+  "museum"         "Museum"
+  "audio"          "Audio"
+  "arduino"        "Arduino"
+  "micropython"    "MicroPython"
+}}
+{{ index $catNames . | default (. | replace "-" " " | title) }}
