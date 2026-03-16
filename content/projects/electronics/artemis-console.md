@@ -1,31 +1,38 @@
 ---
-title: "Artemis Spaceship Bridge Console — Multi-Joystick Firmware"
+title: "Artemis Spaceship Bridge Console — BSG LCARS Interface"
 date: 2016-01-01
 categories: [electronics]
-tags: [arduino, lmn, maker, hid, joystick, gaming, role-playing-game, bridge-simulator, artemis]
+tags: [arduino, maker, hid, capacitive-touch, gaming, role-playing-game, bridge-simulator, artemis, bsg]
 github: "https://github.com/mpflaga/Artemis23consoleMultiJoyStick-Arduino"
 status: complete
 cover: /images/projects/artemis-console.jpg
 photos: "https://photos.app.goo.gl/AJAEkeWEWCe7FiBy8"
-summary: "Arduino firmware for the Lansing Makers Network's Artemis Spaceship Bridge Simulator exhibit — drives a multi-joystick physical console for the cooperative spaceship bridge game."
+summary: "Full LCARS-style bridge simulator — hand-built capacitive touch consoles at every station, BSG 2003 aesthetic, support craft, narrated training, and spectator viewer portals."
 ---
 
 ## Overview
 
-[Artemis Spaceship Bridge Simulator](http://www.artemisspaceshipbridge.com/) is a cooperative multiplayer game where each player sits at a dedicated station — helm, weapons, engineering, science, and comms — and the crew works together to operate a starship. It's best played with physical controls rather than keyboards.
+[Artemis Spaceship Bridge Simulator](http://www.artemisspaceshipbridge.com/) is a cooperative multiplayer game where each player sits at a dedicated station — helm, weapons, engineering, science, and comms — and the crew works together to operate a starship.
 
-The Lansing Makers Network built a physical bridge console for their space, and this is the Arduino firmware that drives it. The console presents itself to the host PC as multiple USB HID joystick/gamepad devices — one per station — so Artemis sees it as standard input hardware with no custom drivers needed.
+The team took this well beyond keyboards and joysticks. Each station has a **custom hand-built capacitive touch console** — no commercial touchscreens. These UI's are a full **LCARS-style interface**, styled after the *Battlestar Galactica* (2003) aesthetic rather than the Trek TNG look most people associate with LCARS. The Arduino firmware presents the consoles to the host PC as standard USB HID devices — no custom drivers needed.
+
+## The Full Experience
+
+Beyond the main bridge, the installation included:
+
+- **4 support craft** — independently flyable vessels that crew members could launch and pilot on their own away missions alongside the main ship
+- **Training room** — an onboarding space for new crew members, narrated by **Zapp Brannigan**, walking them through station roles and procedures before their first mission
+- **Viewer portals** — dedicated display positions for a spectator gallery, so an audience could follow along as the crew journeyed without being in the way of active stations
 
 ## Hardware
 
-- **Arduino** with USB HID support (Leonardo or similar ATmega32U4 board)
-- Physical joysticks, buttons, and switches wired per station layout
-- Multiple axes and buttons mapped to Artemis control inputs
+- **Arduino** with USB HID support (Leonardo or ATmega32U4-based board) per station
+- **Custom capacitive touch panels** — hand-fabricated, no commercial touchscreen hardware
+- Multiple logical input axes and buttons per station, mapped to Artemis control inputs
+- BSG-themed LCARS layout applied to each station's physical panel design
 
 ## How It Works
 
-The firmware enumerates as multiple HID joystick devices over a single USB connection. Each logical joystick maps to an Artemis bridge station. Button and axis states are read from the physical hardware and reported to the host as standard HID reports — plug and play with Artemis on any OS.
+The firmware enumerates each station as a separate USB HID joystick/gamepad device over a shared USB connection. Button and axis states are read from the capacitive touch hardware and reported to the host as standard HID reports — plug and play with Artemis on any OS.
 
-## LMN Context
-
-This is one of several community exhibit projects built for the [Lansing Makers Network](https://lansingmakersnetwork.org/) maker space. Members and visitors can play Artemis on the physical console during open shop hours.
+Members and visitors could experience the full bridge simulator — from training through live missions — during open shop hours.
