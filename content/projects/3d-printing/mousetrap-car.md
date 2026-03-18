@@ -1,6 +1,6 @@
 ---
 title: "Mousetrap Car — 7 Improvements Over Thingiverse Original"
-date: 2025-03-01
+date: 2026-03-01
 categories: [3d-printing]
 tags: [bambu, makerworld, pla, physics, stem]
 makerworld: "https://makerworld.com/en/models/2467196-mousetrap-car"
