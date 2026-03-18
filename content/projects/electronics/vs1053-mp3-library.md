@@ -5,6 +5,7 @@ categories: [electronics, arduino, audio]
 tags: [mp3, library, maker, spi, vs1053]
 github: "https://github.com/mpflaga/Arduino_Library-vs1053_for_SdFat"
 docs: "https://mpflaga.github.io/Arduino_Library-vs1053_for_SdFat/"
+cover: /images/projects/sparkfun-mp3-shield.webp
 status: complete
 summary: "Non-blocking, interrupt-driven Arduino library for the VLSI VS1053 audio decoder chip — streams MP3, AAC, Ogg Vorbis, FLAC, WMA, and WAV from SD card over SPI."
 ---
