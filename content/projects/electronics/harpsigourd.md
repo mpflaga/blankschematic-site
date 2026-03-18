@@ -2,7 +2,7 @@
 title: "HarpsiGourd — Capacitive Touch Pumpkin Instrument"
 date: 2016-11-02
 categories: [electronics, arduino, audio]
-tags: [capacitive-touch, neopixel, mp3, mpr121, ws2812, halloween, pumpkin, midi, maker, makerfaire, detroit]
+tags: [capacitive-touch, neopixel, mp3, mpr121, ws2812, halloween, pumpkin, midi, maker, maker-faire]
 github: "https://github.com/lansing-makers-network/Arduino-harpsi-gourd"
 hackaday: "https://hackaday.io/project/17510-arduino-harpsi-gourd"
 cover: /images/projects/harpsigourd.jpg

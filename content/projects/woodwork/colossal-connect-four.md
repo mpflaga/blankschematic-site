@@ -2,7 +2,7 @@
 title: "Colossal Connect Four"
 date: 2016-11-05
 categories: [woodwork]
-tags: [makerfaire, maker, foam, game, detroit]
+tags: [maker-faire, maker, foam, game]
 cover: /images/projects/colossal-connect-four.jpg
 photos: "https://photos.app.goo.gl/38F7Zy5u7xCeDF6A7"
 status: complete

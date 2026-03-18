@@ -2,7 +2,7 @@
 title: "Artemis Spaceship Bridge Console — BSG LCARS Interface"
 date: 2016-01-01
 categories: [electronics]
-tags: [arduino, maker, makerfaire, detroit, hid, capacitive-touch, gaming, role-playing-game, bridge-simulator, artemis, bsg]
+tags: [arduino, maker, maker-faire, hid, capacitive-touch, gaming, role-playing-game, bridge-simulator, artemis, bsg]
 github: "https://github.com/mpflaga/Artemis23consoleMultiJoyStick-Arduino"
 status: complete
 cover: /images/projects/artemis-console.jpg

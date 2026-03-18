@@ -2,7 +2,7 @@
 title: "Arduino Beginner Demonstration"
 date: 2018-01-01
 categories: [electronics, arduino]
-tags: [education, stem, makerfaire, detroit, demonstration, beginner, led, servo, buzzer]
+tags: [education, stem, maker-faire, demonstration, beginner, led, servo, buzzer]
 cover: /images/projects/arduino-beginner-demo.png
 photos: "https://photos.google.com/album/AF1QipPfdvfbKvhqEhHOv4wiu3HR_MI29k9CKALo6Aaa"
 status: complete
