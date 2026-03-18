@@ -8,14 +8,16 @@ hackaday: "https://hackaday.io/project/17510-arduino-harpsi-gourd"
 cover: /images/projects/harpsigourd.jpg
 photos: "https://photos.app.goo.gl/ahDYrt1on1wZVnwK9"
 status: complete
-summary: "A touch-sensitive musical instrument played like Lurch from the Addams Family — 15 pumpkins wired as capacitive keys driving a Music Maker MP3 shield, sized to sit on a piano keyboard with the lid closed."
+summary: "The electronics half of the HarpsiGourd — 15 pumpkins wired as capacitive touch keys driving a Music Maker MP3 shield. Pairs with the CNC Faux Piano shell for exhibition use."
 ---
 
 ## Overview
 
 Built for Lansing How-To Halloween, the HarpsiGourd replaces the harpsichord's ivory keys with small pumpkins — a nod to Lurch of the Addams Family, swapping the over-rated touch-sensitive banana for something more seasonally appropriate.
 
-Each pumpkin is a capacitive touch key. Touch it, hear a note. The panel is sized to drop directly onto an existing upright piano keyboard with the lid closed. Covered by [Hackaday](https://hackaday.com/2016/11/06/harpsi-gourd-gets-you-into-thanksgiving-spirit/) and fully documented on [Instructables](https://www.instructables.com/Arudino-Harpsi-Gourd/).
+Each pumpkin is a capacitive touch key. Touch it, hear a note. The panel was originally sized to drop onto a real upright piano keyboard — but after one too many trips hauling a full piano to exhibitions, the team built a collapsible CNC-milled shell to replace it. See the [HarpsiGourd Faux Piano](/projects/woodwork/harpsigourd-faux-piano/) project for the enclosure.
+
+Covered by [Hackaday](https://hackaday.com/2016/11/06/harpsi-gourd-gets-you-into-thanksgiving-spirit/) and fully documented on [Instructables](https://www.instructables.com/Arudino-Harpsi-Gourd/).
 
 ## Hardware
 
