@@ -3,6 +3,7 @@ title: "HarpsiGourd Faux Piano — CNC Collapsible Shell"
 date: 2017-10-28
 categories: [woodwork]
 tags: [cnc, halloween, maker-faire, fluorescent, cub-scouts, collapsible]
+cover: /images/projects/harpsigourd.jpg
 photos: "https://photos.app.goo.gl/ahDYrt1on1wZVnwK9"
 status: complete
 summary: "CNC-milled collapsible upright piano shell built to replace hauling a real piano to exhibitions — assembles via slots, holes, and pegs with no tools, and disassembles flat for storage."
