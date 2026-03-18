@@ -12,6 +12,8 @@ summary: "Python tool for validating cellular SIM activation on a Digi WR21 rout
 
 ## Overview
 
+![Digi WR21 SIM tester with LCD and rotary encoder](/images/projects/sim-tester-digi-device.jpg)
+
 This tool validates whether a cellular SIM card is properly activated. Running as a Python script on a **Digi WR21** embedded router, it identifies the SIM's vendor or carrier, then systematically attempts each known APN associated with that carrier. Status and results are shown on an attached 2-line USB/Serial LCD text display.
 
 ## Hardware Interface
