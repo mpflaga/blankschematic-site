@@ -19,7 +19,7 @@ Inspired by [this Thingiverse design](https://www.thingiverse.com/thing:521446),
 2. **Lever arm cradle** — a printed cradle positions the lever arm (the spring-loaded bar) and clips it securely to the trap's drive bar before launch
 3. **Universal chassis cradles** — front and rear cradles are symmetrical and designed to clear both trap styles: plastic cheese-bait pedal traps and brass bait-bar traps
 4. **Drive axle string-release** — a printed catch on the drive axle snags the loop knot at the end of the wound string; when the string reaches full extension, the knot releases cleanly instead of reversing the axle direction and braking the car
-5. **Revised wheel hub** — press-fit hub snaps onto the axle without glue
+5. **Revised wheel hub** — printed filament pins lock the hub to the axle, replacing glue
 6. **Reduced drive axle friction** — bearing surface geometry optimized at the chassis contact points
 7. **Wider wheelbase** — improves straight-line tracking on smooth floors
 
