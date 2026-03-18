@@ -4,6 +4,7 @@ date: 2021-10-21
 categories: [electronics]
 tags: [arduino, maker, photocell, hid, usb]
 github: "https://github.com/mpflaga/MouseWiggler"
+cover: /images/projects/mouse-wiggler.webp
 status: complete
 summary: "Arduino Micro Pro HID device that prevents screensavers when room lights are on — uses a dual-criteria light-change algorithm to distinguish light switches from gradual daylight changes."
 ---
