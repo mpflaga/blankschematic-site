@@ -1,6 +1,6 @@
 ---
 title: "Exterior Hose Bib Shim (Sillcock Spacer)"
-date: 2024-01-01
+date: 2024-06-02
 categories: [3d-printing]
 tags: [pla, thingiverse, plumbing, outdoor]
 thingiverse: "https://www.thingiverse.com/thing:6647128"
