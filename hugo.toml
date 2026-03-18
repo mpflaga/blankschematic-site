@@ -5,6 +5,11 @@ languageCode = "en-us"
 [pagination]
   pagerSize = 10
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
 [params]
 description = "Maker projects — electronics, 3D printing, networking, home automation"
 
