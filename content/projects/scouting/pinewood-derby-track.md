@@ -1,7 +1,7 @@
 ---
 title: "Open Source Pinewood Derby Track"
 date: 2015-04-13
-categories: [bsa, electronics]
+categories: [scouting, electronics]
 tags: [arduino, eaglecad, pcb, cub-scouts, lmn, maker]
 github: "https://github.com/mpflaga/PineWoodDerbyTrack-Arduino"
 github2: "https://github.com/mpflaga/PineWoodDerby_Mega_Shield-Eagle"

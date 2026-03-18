@@ -260,7 +260,7 @@ a.tag:hover { opacity: 0.7; }
 .tag-orange    { color: var(--bs-orange); border-color: var(--bs-orange); }
 .tag-purple    { color: var(--bs-purple); border-color: var(--bs-purple); }
 .tag-gray      { color: #888; border-color: #666; }
-.tag-bsa       { color: var(--bs-orange); border-color: var(--bs-orange); }
+.tag-scouting       { color: var(--bs-orange); border-color: var(--bs-orange); }
 .tag-electronics { color: var(--bs-blue); border-color: var(--bs-blue); }
 .tag-networking  { color: var(--bs-purple); border-color: var(--bs-purple); }
 .tag-3d-printing { color: var(--bs-red); border-color: var(--bs-red); }
@@ -347,7 +347,7 @@ a.tag:hover { opacity: 0.7; }
   border-radius: 3px;
   text-transform: lowercase;
 }
-.badge-bsa          { background: #fff3e0; color: var(--bs-orange); }
+.badge-scouting          { background: #fff3e0; color: var(--bs-orange); }
 .badge-electronics  { background: #e8f5f8; color: var(--bs-blue); }
 .badge-networking   { background: #f3e8f8; color: var(--bs-purple); }
 .badge-3d-printing  { background: #fce8e7; color: var(--bs-red); }
@@ -580,7 +580,7 @@ a.tag:hover { opacity: 0.7; }
 .proj-tag.tag-networking    { background: #f0eaf7; color: var(--bs-purple); }
 .proj-tag.tag-audio         { background: #f0eaf7; color: var(--bs-purple); }
 .proj-tag.tag-museum        { background: #e8eef5; color: #5a82b4; }
-.proj-tag.tag-bsa           { background: #fdf3e0; color: #b87a0a; }
+.proj-tag.tag-scouting           { background: #fdf3e0; color: #b87a0a; }
 .proj-tag.tag-3d-printing   { background: #fdecea; color: var(--bs-red); }
 .proj-tag.tag-woodwork      { background: #f2ede9; color: #8a6a50; }
 .proj-tag.tag-micropython   { background: #e6f9ee; color: #16a050; }
@@ -635,7 +635,7 @@ a.tag:hover { opacity: 0.7; }
   color: var(--bs-muted);
 }
 .cat-card.cat-electronics::after  { background: var(--bs-blue); }
-.cat-card.cat-bsa::after          { background: var(--bs-orange); }
+.cat-card.cat-scouting::after          { background: var(--bs-orange); }
 .cat-card.cat-museum::after       { background: #5a82b4; }
 .cat-card.cat-networking::after   { background: var(--bs-purple); }
 .cat-card.cat-3d-printing::after  { background: var(--bs-red); }
@@ -648,7 +648,7 @@ a.tag:hover { opacity: 0.7; }
 
 /* ── Category icon colors — match accent bar ── */
 .cat-card.cat-electronics   .cat-icon svg { color: var(--bs-blue); }
-.cat-card.cat-bsa           .cat-icon svg { color: var(--bs-orange); }
+.cat-card.cat-scouting           .cat-icon svg { color: var(--bs-orange); }
 .cat-card.cat-museum        .cat-icon svg { color: #5a82b4; }
 .cat-card.cat-networking    .cat-icon svg { color: var(--bs-purple); }
 .cat-card.cat-3d-printing   .cat-icon svg { color: var(--bs-red); }

@@ -1,7 +1,7 @@
 ---
 title: "HarpsiGourd Faux Piano — CNC Collapsible Shell"
 date: 2017-10-28
-categories: [woodwork, bsa]
+categories: [woodwork, scouting]
 tags: [cnc, halloween, maker-faire, fluorescent, cub-scouts, collapsible]
 cover: /images/projects/harpsigourd.jpg
 photos: "https://photos.app.goo.gl/ahDYrt1on1wZVnwK9"
