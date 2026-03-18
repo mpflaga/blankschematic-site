@@ -14,6 +14,10 @@ summary: "ESPHome config for an ESP32 Wiegand keypad reader built on a thin-edge
 
 An ESPHome config for an ESP32 that acts as a Wiegand keypad reader for a garage door. The design is built around a **thin-edge philosophy** — the device's only job is to capture input and relay it upstream to Home Assistant, with no local secret storage or access-control logic on the device itself.
 
+## Wiegand Device Compatibility
+
+This config works with **any Wiegand-compatible reader** — keypads, RFID readers, or combo units. However, many low-cost devices ship in a **host mode** where they store PINs internally and control a relay output directly. These devices need to be reconfigured to **Wiegand output mode** before they'll work here. The reconfiguration process varies by device but typically involves a programming card sequence or a DIP switch. Once in Wiegand mode the device stops managing access locally and simply outputs credentials on the D0/D1 data lines — exactly what this config expects.
+
 ## How It Works
 
 The `wiegand` component reads raw input from a Wiegand-protocol keypad (or RFID reader) connected on two GPIO pins (D0/D1), handling raw key presses, tag reads, and raw bit streams. On top of that, the `key_collector` component assembles individual key presses into a complete 4-digit PIN:
