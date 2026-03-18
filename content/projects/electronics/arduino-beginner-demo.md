@@ -3,6 +3,7 @@ title: "Arduino Beginner Demonstration"
 date: 2018-01-01
 categories: [electronics, arduino]
 tags: [education, stem, demonstration, beginner, led, servo, buzzer]
+cover: /images/projects/arduino-beginner-demo.png
 photos: "https://photos.google.com/album/AF1QipPfdvfbKvhqEhHOv4wiu3HR_MI29k9CKALo6Aaa"
 status: complete
 summary: "A quick hands-on demonstration giving novice users a concrete feel for what an Arduino is, what it can do, and how easy it is to get started — progressing from blinking an LED through buttons, analog I/O, servo control, and sound."
