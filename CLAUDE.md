@@ -56,7 +56,7 @@ Hugo static site deployed on Cloudflare Pages from a private GitHub repo.
 | electronics | Electronics | `--bs-blue` |
 | arduino | Arduino | `--bs-blue` |
 | audio | Audio | `--bs-purple` |
-| bsa | BSA | `--bs-orange` |
+| bsa | Scouting | `--bs-orange` |
 | museum | Museum | `#5a82b4` |
 | networking | Networking | `--bs-purple` |
 | 3d-printing | 3D Printing | `--bs-red` |
