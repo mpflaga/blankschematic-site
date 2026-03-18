@@ -4,6 +4,7 @@ date: 2024-01-01
 categories: [3d-printing]
 tags: [thingiverse, pla, pet, safety, fusion360]
 thingiverse: "https://www.thingiverse.com/thing:6654219"
+cover: /images/projects/outlet-cable-cover-kitten.jpg
 status: complete
 summary: "Printed arch that straddles a plug to keep foster kittens from pulling out power cables — parametric Fusion 360 source included for other plug sizes."
 ---
