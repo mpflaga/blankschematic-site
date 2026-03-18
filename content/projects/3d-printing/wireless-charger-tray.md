@@ -17,7 +17,7 @@ A wireless charging cradle for the Samsung S10 and S22, designed to sit on a nig
 
 Uses an inexpensive PCB wireless charger module:
 
-![Wireless charger PCB](/images/projects/wireless-charger-pcb.jpg)
+<img src="/images/projects/wireless-charger-pcb.jpg" alt="Wireless charger PCB" style="width:25%; transform:rotate(-90deg); display:block; margin:1rem 0;" />
 
 A lip on the underside creates a shelf that conceals the Micro-USB connector flush with the base.
 
