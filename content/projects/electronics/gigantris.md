@@ -2,7 +2,7 @@
 title: "Gigantris — Oversized LED Tetris"
 date: 2016-11-01
 categories: [electronics, arduino]
-tags: [rgb, led, neopixel, wii, gaming, makerfaire, maker, parade]
+tags: [rgb, led, neopixel, wii, gaming, makerfaire, detroit, maker, parade]
 cover: /images/projects/gigantris.jpg
 photos: "https://photos.app.goo.gl/fR76sjkUX4ragu1j9"
 status: complete
