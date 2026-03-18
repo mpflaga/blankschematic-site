@@ -3,7 +3,8 @@ title: "Mousetrap Car — 7 Improvements Over Thingiverse Original"
 date: 2025-03-01
 categories: [3d-printing]
 tags: [bambu, makerworld, pla, physics, stem]
-makerworld: ""
+makerworld: "https://makerworld.com/en/models/2467196-mousetrap-car"
+cover: /images/projects/mousetrap-car.jpg
 status: complete
 summary: "Physics project redesign with optimized axle geometry, revised wheel hubs, printable spring tensioner, and reinforced lever arm — 7 measurable improvements over the Thingiverse baseline."
 ---
@@ -35,4 +36,4 @@ summary: "Physics project redesign with optimized axle geometry, revised wheel h
 
 ## Files
 
-<!-- Link to MakerWorld and/or direct STL downloads -->
+Print files are published on [MakerWorld](https://makerworld.com/en/models/2467196-mousetrap-car).
