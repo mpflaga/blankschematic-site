@@ -18,7 +18,39 @@
   --bs-mono:     'Share Tech Mono', monospace;
   --bs-serif:    'Instrument Serif', serif;
   --bs-sans:     'Barlow', sans-serif;
+  --bs-code-bg:  #1a1510;
+  --bg-alt:      #ede9e3;
 }
+
+[data-theme="dark"] {
+  --bs-bg:      #1a1510;
+  --bs-surface: #231c14;
+  --bs-dark:    #f4f1ec;
+  --bs-mid:     #c4a882;
+  --bs-muted:   #7a6a5a;
+  --bs-border:  #3a2f22;
+  --bs-code-bg: #0d0a07;
+  --bg-alt:     #231c14;
+}
+
+[data-theme="dark"] .proj-tag.tag-electronics,
+[data-theme="dark"] .proj-tag.tag-arduino      { background: #0a2a30; }
+[data-theme="dark"] .proj-tag.tag-home-assistant { background: #082830; }
+[data-theme="dark"] .proj-tag.tag-networking,
+[data-theme="dark"] .proj-tag.tag-audio        { background: #1e0d2e; }
+[data-theme="dark"] .proj-tag.tag-museum       { background: #0d1a28; }
+[data-theme="dark"] .proj-tag.tag-scouting     { background: #2a1e00; color: var(--bs-orange); }
+[data-theme="dark"] .proj-tag.tag-3d-printing,
+[data-theme="dark"] .proj-tag.tag-raspberry-pi { background: #2a0a08; }
+[data-theme="dark"] .proj-tag.tag-woodwork     { background: #1e1208; color: #c4956a; }
+[data-theme="dark"] .proj-tag.tag-micropython  { background: #062014; }
+[data-theme="dark"] .badge-scouting            { background: #2a1e00; color: var(--bs-orange); }
+[data-theme="dark"] .badge-electronics         { background: #0a2a30; }
+[data-theme="dark"] .badge-networking          { background: #1e0d2e; }
+[data-theme="dark"] .badge-3d-printing         { background: #2a0a08; }
+[data-theme="dark"] .badge-woodwork            { background: #1e1208; color: #c4956a; }
+[data-theme="dark"] .badge-museum              { background: #0d1a28; }
+[data-theme="dark"] .cat-card                  { background: var(--bs-surface); }
 
 html { font-size: 16px; }
 body {
@@ -476,7 +508,7 @@ a.tag:hover { opacity: 0.7; }
   border-radius: 3px;
 }
 .project-content pre {
-  background: var(--bs-dark);
+  background: var(--bs-code-bg);
   color: #ccc;
   padding: 1.25rem;
   border-radius: 6px;
@@ -846,3 +878,22 @@ a.tag:hover { opacity: 0.7; }
   flex-shrink: 0;
 }
 details[open] > .toc-h2-summary::before { transform: rotate(90deg); }
+
+/* Dark mode toggle */
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 6px;
+  color: var(--bs-mid);
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  transition: color 0.15s;
+}
+.theme-toggle:hover { color: var(--bs-dark); }
+.theme-toggle svg { display: block; }
+.icon-sun  { display: none; }
+.icon-moon { display: block; }
+[data-theme="dark"] .icon-sun  { display: block; }
+[data-theme="dark"] .icon-moon { display: none; }
