@@ -500,6 +500,8 @@ a.tag:hover { opacity: 0.7; }
 .project-content ul,
 .project-content ol { margin: 0 0 1rem 1.5rem; }
 .project-content li { margin-bottom: 0.25rem; }
+[data-theme="dark"] .project-content code { background: #2a2018; color: var(--bs-dark); }
+
 .project-content code {
   font-family: var(--bs-mono);
   font-size: 13px;
@@ -897,3 +899,5 @@ details[open] > .toc-h2-summary::before { transform: rotate(90deg); }
 .theme-toggle .icon-moon { display: block; }
 [data-theme="dark"] .theme-toggle .icon-sun  { display: block; }
 [data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+[data-theme="dark"] .project-content blockquote { color: var(--bs-mid); }
+[data-theme="dark"] .project-content blockquote strong { color: var(--bs-dark); }
