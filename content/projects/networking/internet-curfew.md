@@ -10,7 +10,9 @@ summary: "Blocks internet access per-device on a schedule using OpenWRT nftables
 
 ## Overview
 
-A fully local, cloud-free parental internet curfew built on two components: OpenWRT enforces the actual firewall rules, and Home Assistant provides the dashboard toggle for parents to enable or disable curfew on demand. No third-party app, no subscription — just nftables, a small CGI script, and a REST sensor.
+The problem: kids hiding under the covers with a tablet or sneaking downstairs to watch TV until 4 AM. The solution: cut the internet to their devices on a schedule, with a quick toggle on the parents' dashboard to restore or enforce it on demand — no negotiations, no excuses.
+
+Built entirely local and cloud-free. OpenWRT enforces the actual firewall rules, and Home Assistant provides the dashboard toggle. No third-party app, no subscription, no calling home — just nftables, a small CGI script, and a REST sensor.
 
 ## Architecture
 
