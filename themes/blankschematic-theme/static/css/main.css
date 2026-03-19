@@ -829,3 +829,20 @@ a.tag:hover { opacity: 0.7; }
 .toc-box nav ul li { margin: 0.2rem 0; }
 .toc-box nav a { color: var(--bs-blue); text-decoration: none; }
 .toc-box nav a:hover { text-decoration: underline; }
+.toc-box nav > ul > li > details { margin: 0.1rem 0; }
+.toc-h2-summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.toc-h2-summary::-webkit-details-marker { display: none; }
+.toc-h2-summary::before {
+  content: '▶';
+  font-size: 0.55rem;
+  color: var(--bs-muted);
+  transition: transform 0.15s;
+  flex-shrink: 0;
+}
+details[open] > .toc-h2-summary::before { transform: rotate(90deg); }

@@ -63,6 +63,20 @@
       <summary>Contents</summary>
       {{ .TableOfContents }}
     </details>
+    <script>
+    document.querySelectorAll('.toc-box nav > ul > li').forEach(li => {
+      const subList = li.querySelector(':scope > ul');
+      if (!subList) return;
+      const link = li.querySelector(':scope > a');
+      const det = document.createElement('details');
+      const sum = document.createElement('summary');
+      sum.className = 'toc-h2-summary';
+      if (link) { sum.appendChild(link.cloneNode(true)); link.remove(); }
+      det.appendChild(sum);
+      li.appendChild(det);
+      det.appendChild(subList);
+    });
+    </script>
     {{ end }}
 
     <div class="project-content">
