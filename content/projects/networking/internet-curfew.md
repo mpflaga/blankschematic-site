@@ -14,6 +14,8 @@ The problem: kids hiding under the covers with a tablet or sneaking downstairs t
 
 Built entirely local and cloud-free. OpenWRT enforces the actual firewall rules, and Home Assistant provides the dashboard toggle. No third-party app, no subscription, no calling home — just nftables, a small CGI script, and a REST sensor.
 
+Rules target devices at **Layer 2 by MAC address**, which means they work regardless of IP assignment, VLAN membership, or connection type — a device is blocked whether it's on Wi-Fi, wired Ethernet, or roams between them, and DHCP lease renewals don't help.
+
 ## Architecture
 
 ```
