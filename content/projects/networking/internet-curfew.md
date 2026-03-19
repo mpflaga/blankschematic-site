@@ -29,14 +29,19 @@ Scheduled groups are restored at boot. Manual-only groups are intentionally not 
 
 ## Architecture
 
-```
-[HA Dashboard Toggle]
-        ↓
-[HA REST command → OpenWRT CGI]
-        ↓
-[nftables rule add / remove]
-        ↓
-[Devices blocked / unblocked]
+```mermaid
+flowchart TD
+    A["🏠 Home Assistant\nParents Dashboard"] -->|"REST POST\naction / group / key"| B["📡 OpenWRT Router\nCGI Endpoint /cgi-bin/curfew"]
+    B --> C{Action?}
+    C -->|enable| D["curfew-enable.sh\nAdd nftables rules"]
+    C -->|disable| E["curfew-disable.sh\nRemove nftables rules"]
+    C -->|status_all| F["curfew-status.sh\nReturn JSON state"]
+    F -->|"60s poll"| A
+    D --> G["fw4 forward chain\nnftables MAC rules"]
+    E --> G
+    G -->|Block| H["Kids Devices\n(Layer 2 / MAC)"]
+    G -->|Block| I["Roku / TV\n(Layer 2 / MAC)"]
+    G -->|"Schedule or\nManual"| J["Teen PC\n(Manual only)"]
 ```
 
 ## OpenWRT Setup
