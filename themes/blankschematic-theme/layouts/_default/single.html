@@ -58,6 +58,13 @@
       {{ end }}
     </div>
 
+    {{ if .TableOfContents }}
+    <details class="toc-box" open>
+      <summary>Contents</summary>
+      {{ .TableOfContents }}
+    </details>
+    {{ end }}
+
     <div class="project-content">
       {{ .Content }}
     </div>
