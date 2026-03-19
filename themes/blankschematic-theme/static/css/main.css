@@ -893,7 +893,7 @@ details[open] > .toc-h2-summary::before { transform: rotate(90deg); }
 }
 .theme-toggle:hover { color: var(--bs-dark); }
 .theme-toggle svg { display: block; }
-.icon-sun  { display: none; }
-.icon-moon { display: block; }
-[data-theme="dark"] .icon-sun  { display: block; }
-[data-theme="dark"] .icon-moon { display: none; }
+.theme-toggle .icon-sun  { display: none; }
+.theme-toggle .icon-moon { display: block; }
+[data-theme="dark"] .theme-toggle .icon-sun  { display: block; }
+[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
