@@ -31,7 +31,7 @@ Scheduled groups are restored at boot. Manual-only groups are intentionally not 
 
 ```mermaid
 flowchart TD
-    A["<img src='/images/icons/homeassistant.svg' width='6'/><br/>Home Assistant<br/>Parents Dashboard"] -->|"REST POST<br/>action / group / key"| B["<img src='/images/icons/openwrt.svg' width='6'/><br/>OpenWRT Router<br/>CGI /cgi-bin/curfew"]
+    A["🏠 Home Assistant\nParents Dashboard"] -->|"REST POST\naction / group / key"| B["📡 OpenWRT Router\nCGI /cgi-bin/curfew"]
     B --> C{Action?}
     C -->|enable| D["curfew-enable.sh\nAdd nftables rules"]
     C -->|disable| E["curfew-disable.sh\nRemove nftables rules"]
