@@ -449,6 +449,7 @@ a.tag:hover { opacity: 0.7; }
 }
 .status-complete    { color: var(--bs-green);  border-color: var(--bs-green); }
 .status-in-progress { color: var(--bs-orange); border-color: var(--bs-orange); }
+.status-ongoing     { color: var(--bs-blue);   border-color: var(--bs-blue); }
 .status-draft       { color: var(--bs-muted);  border-color: var(--bs-border); }
 
 .project-cover {

@@ -4,7 +4,7 @@ date: 2026-03-21
 categories: [home-assistant]
 tags: [esphome, zigbee, raspberry-pi, automation, cloudflare, mqtt, shelly, sonoff, zha, floorplan]
 cover: /images/projects/home-assistant-overview.png
-status: complete
+status: ongoing
 summary: "A look inside a fully local, cloud-free Home Assistant installation — 1,900 entities, 66 automations, 20 rooms, and a Raspberry Pi 4 running the whole house."
 ---
 
@@ -92,7 +92,7 @@ The office has more automation logic than any other room, built around one idea:
 
 **Wand controls** — MagiQuest wands have been repurposed as home automation controllers. The wands are infrared — when flicked or swished, they emit an IR signal containing the wand's unique serial number. Custom-built ESP32 devices with IR receivers decode the serial and fire the corresponding automation. Each wand is individually identified. Waving a wand controls holiday lighting, the Christmas tree, color effects, or any scene — and it actually looks like magic.
 
-## Kids Digital Curfew
+## Digital Curfew
 
 The dashboard gives parents direct control over the router's digital curfew. The family's OpenWRT router blocks internet access for specific devices on a schedule, controlled entirely from HA. Four independent groups cover kids' devices, the Roku, a teen's PC, and the family room TV.
 

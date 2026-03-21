@@ -23,6 +23,7 @@ Hugo static site deployed on Cloudflare Pages from a private GitHub repo.
 - `status: draft` — hidden from listings but still builds
 - `status: in-progress` — visible in listings, shown with a WIP indicator
 - `status: complete` — fully published
+- `status: ongoing` — living projects that are always evolving (e.g. HA setup overview); shown in blue
 - Current drafts: `furnace-monitor.md` (placeholder content — needs real write-up)
 - Current in-progress: `mega-calculator-micropython.md`
 - When ready: change status to `complete`
