@@ -263,7 +263,7 @@ chmod +x /usr/bin/curfew-*.sh /www/cgi-bin/curfew
 
 Add all files to `/etc/sysupgrade.conf` so they survive firmware upgrades:
 
-```
+```text
 /usr/bin/curfew-macs.sh
 /usr/bin/curfew-enable.sh
 /usr/bin/curfew-disable.sh
