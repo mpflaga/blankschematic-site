@@ -2,7 +2,7 @@
 title: "Litter Scoop Drip Tray"
 date: 2024-06-09
 categories: [3d-printing]
-tags: [thingiverse, pla, pet, kitten]
+tags: [thingiverse, pet, kitten]
 thingiverse: "https://www.thingiverse.com/thing:6654715"
 cover: /images/projects/litter-scoop-drip-tray.jpg
 status: complete

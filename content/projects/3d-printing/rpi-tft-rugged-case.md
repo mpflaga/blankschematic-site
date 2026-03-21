@@ -2,7 +2,7 @@
 title: "Rugged Case — Raspberry Pi with 6-Button TFT Display"
 date: 2025-09-19
 categories: [3d-printing, raspberry-pi]
-tags: [thingiverse, pla, tft, lcd, headless]
+tags: [thingiverse, tft, lcd, headless]
 thingiverse: "https://www.thingiverse.com/thing:7150056"
 cover: /images/projects/rpi-tft-rugged-case.png
 status: complete

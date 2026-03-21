@@ -2,7 +2,7 @@
 title: "Wemos D1 Mini Snap-Fit Case — ESPHome LED Indicator"
 date: 2024-06-09
 categories: [3d-printing, home-assistant]
-tags: [thingiverse, pla, fusion360, esphome, wemos, esp8266, mqtt]
+tags: [thingiverse, fusion360, esphome, wemos, esp8266, mqtt]
 thingiverse: "https://www.thingiverse.com/thing:6654666"
 cover: /images/projects/wemos-d1-mini-case.jpg
 status: complete

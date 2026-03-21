@@ -2,7 +2,7 @@
 title: "Wireless Phone Charger Cradle — Samsung S10 / S22"
 date: 2024-06-08
 categories: [3d-printing]
-tags: [thingiverse, pla, fusion360, phone, nightstand]
+tags: [thingiverse, fusion360, phone, nightstand]
 thingiverse: "https://www.thingiverse.com/thing:6654575"
 cover: /images/projects/wireless-charger-tray.jpg
 status: complete

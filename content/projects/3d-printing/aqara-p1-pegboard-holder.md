@@ -2,7 +2,7 @@
 title: "Aqara Motion Sensor P1 — Peg Board Holder"
 date: 2025-09-01
 categories: [3d-printing, home-assistant]
-tags: [bambu, makerworld, pla, aqara]
+tags: [bambu, makerworld, aqara]
 makerworld: "https://makerworld.com/en/models/1754725-aqara-motion-sensor-p1-peg-board-holder"
 cover: /images/projects/aqara-p1-pegboard-holder.jpg
 status: complete

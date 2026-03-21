@@ -2,7 +2,7 @@
 title: "Bond Bridge BD1000 Wall Mount"
 date: 2024-06-09
 categories: [3d-printing, home-assistant]
-tags: [thingiverse, pla, bond-bridge, rf, wall-mount]
+tags: [thingiverse, bond-bridge, rf, wall-mount]
 thingiverse: "https://www.thingiverse.com/thing:6654724"
 cover: /images/projects/bond-bridge-wall-mount.jpg
 status: complete

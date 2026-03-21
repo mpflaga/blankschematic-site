@@ -2,7 +2,7 @@
 title: "Electrical Outlet Cable Cover — Kitten Protector"
 date: 2024-06-08
 categories: [3d-printing]
-tags: [thingiverse, pla, pet, safety, fusion360]
+tags: [thingiverse, pet, safety, fusion360]
 thingiverse: "https://www.thingiverse.com/thing:6654219"
 cover: /images/projects/outlet-cable-cover-kitten.jpg
 status: complete
