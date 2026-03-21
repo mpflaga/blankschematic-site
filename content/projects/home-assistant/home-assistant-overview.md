@@ -3,7 +3,7 @@ title: "Inside My Home Assistant Setup"
 date: 2026-03-21
 categories: [home-assistant]
 tags: [esphome, zigbee, raspberry-pi, automation, cloudflare, mqtt, shelly, sonoff, zha, floorplan]
-cover: /images/icons/homeassistant.svg
+cover: /images/projects/home-assistant-overview.png
 status: complete
 summary: "A look inside a fully local, cloud-free Home Assistant installation — 1,900 entities, 66 automations, 20 rooms, and a Raspberry Pi 4 running the whole house."
 ---
