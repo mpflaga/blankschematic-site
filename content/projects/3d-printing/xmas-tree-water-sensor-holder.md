@@ -1,6 +1,6 @@
 ---
 title: "Christmas Tree Water Sensor Holder — Aqara Leak"
-date: 2026-03-22
+date: 2023-12-10
 categories: [3d-printing, home-assistant]
 tags: [bambu, makerworld, aqara, zigbee, christmas]
 makerworld: "https://makerworld.com/en/models/2561520-christmas-tree-water-sensor-holder-aqara-leak"
