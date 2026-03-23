@@ -96,6 +96,15 @@ a { color: inherit; text-decoration: none; }
   color: var(--bs-dark);
 }
 .nav-brand span { color: var(--bs-red); }
+.nav-tile {
+  flex: 1;
+  align-self: stretch;
+  background-image: url('/images/blankschematic-circuit-tile.svg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin: 0 1rem;
+  pointer-events: none;
+}
 .nav-links {
   display: flex;
   gap: 2rem;
