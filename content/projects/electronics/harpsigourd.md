@@ -7,6 +7,7 @@ github: "https://github.com/lansing-makers-network/Arduino-harpsi-gourd"
 hackaday: "https://hackaday.io/project/17510-arduino-harpsi-gourd"
 cover: /images/projects/harpsigourd-arduino.jpg
 photos: "https://photos.app.goo.gl/ahDYrt1on1wZVnwK9"
+docs: "https://www.instructables.com/Arudino-Harpsi-Gourd/"
 status: complete
 summary: "The electronics half of the HarpsiGourd — 15 pumpkins wired as capacitive touch keys driving a Music Maker MP3 shield. Pairs with the CNC Faux Piano shell for exhibition use."
 ---
