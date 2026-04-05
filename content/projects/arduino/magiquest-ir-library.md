@@ -13,7 +13,7 @@ summary: "Decoded the MagiQuest IR wand protocol on Arduino — extracting each 
 
 ## Overview
 
-We brought the magic home. With this the childrens own Wands now worked beyond that of Great Wolf Lodge. They now work at home. With several Arduino's hiding through out the house. The children could turn on or off; lamps, fans, holiday lights and the Christmas tree. 
+The magic came home with us. Hidden throughout the house like enchanted artifacts, Arduinos lay in wait — and the children's own wands could find them. A swish lit up the Christmas tree. Another woke the holiday lights. The wands that worked at Great Wolf Lodge worked here too, and the wonder on their faces made it all worthwhile.
 
 [MagiQuest](https://www.magiquest.com/) is an interactive game at venues like Great Wolf Lodge where players carry IR-transmitting wands to cast spells at sensors throughout the space. The goal here was to bring that magic home — to decode the protocol, understand what the wands were actually broadcasting, and eventually build hardware that could join in.
 
