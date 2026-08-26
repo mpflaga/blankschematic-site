@@ -99,7 +99,67 @@ ratgdo:
   protocol: secplusv1     # LiftMaster 41AC050-2, purple learn button = Security+ 1.0
 ```
 
-The `wiegand_keypad` package is the same reader logic described above — `wiegand:` + `key_collector:` publishing to the **Keypad Code** text sensor — now just one package among several instead of the whole device. The rest of the config exposes the door itself to Home Assistant: a `cover` for the door, `light` and `lock` (remotes) entities, `binary_sensor`s for obstruction/motion/button plus a physically-wired reed switch for door-closed state, `number`s for the rolling code counter and open/close durations, and template buttons for sync and manual toggle.
+The rest of the config exposes the door itself to Home Assistant: a `cover` for the door, `light` and `lock` (remotes) entities, `binary_sensor`s for obstruction/motion/button plus a physically-wired reed switch for door-closed state, `number`s for the rolling code counter and open/close durations, and template buttons for sync and manual toggle.
+
+### The `wiegand_keypad` Package
+
+This is the reader logic described above, now just one package among several instead of the whole device. `D0`/`D1` land on `GPIO33`/`GPIO35` — through the resistor dividers pictured above — and feed the `wiegand:` and `key_collector:` components that were previously the entire standalone config:
+
+```yaml
+substitutions:
+  wiegand_d0: GPIO33
+  wiegand_d1: GPIO35
+
+wiegand:
+  - id: mykeypad
+    d0: ${wiegand_d0}
+    d1: ${wiegand_d1}
+    on_key:
+      - lambda: ESP_LOGI("KEY", "received key %d", x);
+    on_tag:
+      - lambda: ESP_LOGI("TAG", "received tag %s", x.c_str());
+      - text_sensor.template.publish:
+          id: keypad
+          state: !lambda "return x.c_str();"
+    on_raw:
+      - lambda: ESP_LOGI("RAW", "received raw %d bits, value %llx", bits, value);
+
+key_collector:
+  - id: pincode_reader
+    source_id: mykeypad
+    min_length: 4
+    max_length: 4
+    end_keys: "#"
+    clear_keys: "*#"
+    allowed_keys: "0123456789"
+    timeout: 4s
+    on_progress:
+      - logger.log:
+          format: "input progress: '%s', started by '%c'"
+          args: ['x.c_str()', "(start == 0 ? '~' : start)"]
+    on_result:
+      - logger.log:
+          format: "input result: '%s', started by '%c', ended by '%c'"
+          args: ['x.c_str()', "(start == 0 ? '~' : start)", "(end == 0 ? '~' : end)"]
+      - text_sensor.template.publish:
+          id: keypad
+          state: !lambda "return x.c_str();"
+      - delay: 500ms
+      - text_sensor.template.publish:
+          id: keypad
+          state: "0"
+    on_timeout:
+      - logger.log:
+          format: "input timeout: '%s', started by '%c'"
+          args: ['x.c_str()', "(start == 0 ? '~' : start)"]
+
+text_sensor:
+  - platform: template
+    name: "Keypad Code"
+    id: keypad
+```
+
+Tag reads publish straight to the **Keypad Code** text sensor via `on_tag`; PIN entry goes through `key_collector`, which only publishes `on_result` — a completed 4-digit code terminated by `#`, or a reset on `*#`/timeout. Either path lands on the same sensor, so Home Assistant only ever has one place to watch. The `on_key`/`on_raw` handlers just log at `INFO` for visibility — no logic runs on the device itself, matching the thin-edge design described above.
 
 ## Configuration Practices
 
