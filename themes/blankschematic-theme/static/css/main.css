@@ -513,6 +513,13 @@ a.tag:hover { opacity: 0.7; }
 .project-content ul,
 .project-content ol { margin: 0 0 1rem 1.5rem; }
 .project-content li { margin-bottom: 0.25rem; }
+.project-content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  margin: 0 0 1rem;
+}
 [data-theme="dark"] .project-content code { background: #2a2018; color: var(--bs-dark); }
 
 .project-content code {

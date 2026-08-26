@@ -50,7 +50,7 @@ void loop() {
 
 Each sensor uses two analog pins — one driven LOW as a virtual ground, one read as the signal. This avoids needing a resistor to ground on each sensor and makes wiring a large array cleaner.
 
-```
+```text
 Arduino pin (signal) ─── [Photocell] ─┬─── [10kΩ] ─── Arduino pin (ground, driven LOW)
                                        │
                                     (read ADC)
