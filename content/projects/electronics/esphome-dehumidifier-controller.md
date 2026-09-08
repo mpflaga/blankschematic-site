@@ -89,6 +89,17 @@ this is switching a real compressor unattended:
   human-readable last-command status (`OK` / `AUTH FAILED` / `UNREACHABLE` /
   `HTTP ERROR n`) on the controller's page.
 
+## The web UIs
+
+Both boxes run ESPHome's built-in web server, with the live log streaming
+alongside the entity table. IPs and MACs blurred out below, but everything
+else is real: the plug's cool-off/power-on-delay/watchdog fields, and the
+controller's deadband and humidity reading.
+
+![Dehumidifier Plug web UI, showing the cool-off, power-on delay, and stale-command watchdog fields](/images/projects/esphome-dehumidifier-plug-webui.png)
+
+![Dehumidifier Controller web UI, showing the deadband setpoints, live humidity reading, and plug IP field](/images/projects/esphome-dehumidifier-controller-webui.png)
+
 ## Load and relay rating — the honest caveat
 
 The S31's relay is rated for a **resistive** load. A dehumidifier is a
