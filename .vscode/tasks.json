@@ -1,0 +1,49 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Hugo: Build + Index",
+      "type": "shell",
+      "command": "hugo && npx pagefind --site public",
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "showReuseMessage": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Hugo: Dev Server",
+      "type": "shell",
+      "command": "hugo server --renderToDisk",
+      "isBackground": true,
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new",
+        "showReuseMessage": false
+      },
+      "problemMatcher": {
+        "pattern": {
+          "regexp": "^ERROR"
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "^Start building",
+          "endsPattern": "^Web Server is available"
+        }
+      }
+    },
+    {
+      "label": "Hugo: Start (build + index + serve)",
+      "dependsOrder": "sequence",
+      "dependsOn": ["Hugo: Build + Index", "Hugo: Dev Server"],
+      "group": "build",
+      "runOptions": {
+        "runOn": "folderOpen"
+      },
+      "problemMatcher": []
+    }
+  ]
+}
