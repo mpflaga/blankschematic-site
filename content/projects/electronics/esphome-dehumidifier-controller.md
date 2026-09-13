@@ -14,14 +14,19 @@ summary: "A basement dehumidifier whose built-in control restarts the compressor
 
 ## The problem
 
-A dehumidifier's built-in humidistat has almost no hysteresis: it shuts the
-compressor off at setpoint, and about thirty seconds later — as soon as the
-air near the sensor drifts back up a fraction of a percent — it starts it
-again. All day. The compressor short-cycles, which is hard on it (every start
-is an inrush surge and a high-head restart if the refrigerant pressures
-haven't equalised yet) and it wastes energy holding a number tighter than a
-basement actually needs. A 5–15 %RH swing is fine down there; the goal isn't
-precision, it's *not restarting the compressor every thirty seconds*.
+A dehumidifier's built-in humidistat is fairly basic: its setpoint has
+almost no adjustable range, and there's no way to shape how it cycles the
+compressor. In practice that shows up as short-cycling — the compressor
+restarts within seconds of shutting off, which wears it out (every start is
+an inrush surge and a high-head restart if the refrigerant pressures haven't
+equalized) and wastes energy holding a number tighter than most spaces need.
+
+This project replaces that fixed control with a direct one: a deadband
+(hysteresis) you set as wide or narrow as the space calls for, a compressor
+hold-off timer you control, and the safety features needed to run a
+dehumidifier unattended — aimed at getting the best operation, efficiency,
+and compressor life out of the unit, on your terms rather than the stock
+knob's.
 
 ## The solution
 
