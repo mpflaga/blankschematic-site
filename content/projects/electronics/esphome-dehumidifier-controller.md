@@ -7,7 +7,7 @@ github: "https://github.com/blankschematic/esphome-dehumidifier-controller"
 github2: "https://github.com/blankschematic/esphome-dehumidifier-controller/releases/tag/v1.0.0"
 github2label: "v1.0.0 — firmware & browser install ↗"
 status: complete
-cover: /images/projects/esphome-dehumidifier-controller.jpg
+cover: /images/projects/esphome-dehumidifier-controller.png
 photos: "https://photos.app.goo.gl/2Q6iRifWbn8ioNWV8"
 summary: "A basement dehumidifier whose built-in control restarts the compressor within 30 seconds of finishing a cycle. Two ESPHome boxes replace that with a wide, adjustable deadband and an anti-short-cycle timer — no Home Assistant, no cloud. Ships as three config pairs: a learning-only simple pair, a full pair for a home Wi-Fi network, and a full pair for buildings with no Wi-Fi at all."
 ---
