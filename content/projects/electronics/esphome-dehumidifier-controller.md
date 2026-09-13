@@ -1,5 +1,5 @@
 ---
-title: "A Wide Deadband for a Short-Cycling Basement Dehumidifier"
+title: "Smart Dehumidifier Controller System"
 date: 2026-09-08
 categories: [electronics]
 tags: [esphome, esp32, esp8266, sonoff, humidistat, hvac]
@@ -73,6 +73,12 @@ than sourcing a bare relay and enclosure separately.
 The controller `POST`s `/switch/relay/turn_on` (or `turn_off`) to the plug
 every 20 seconds — not just on a change, so a plug reboot re-syncs within one
 cycle.
+
+The two boxes are only ever connected by Wi-Fi, never by wire, so they can be
+placed **anywhere within Wi-Fi range of each other** — not just side by side.
+The controller (with its humidity sensor) can sit wherever the humidity
+actually needs measuring, while the plug stays wherever the dehumidifier
+lives, even a different room or floor.
 
 ## The guard rails
 
