@@ -6,6 +6,7 @@ tags: [esphome, esp32, esp8266, sonoff, humidistat, hvac]
 github: "https://github.com/blankschematic/esphome-dehumidifier-controller"
 github2: "https://github.com/blankschematic/esphome-dehumidifier-controller/releases/tag/v1.0.0"
 github2label: "v1.0.0 — firmware & browser install ↗"
+makerworld: "https://makerworld.com/en/models/3303615-esp32-sht41-ambient"
 status: complete
 cover: /images/projects/esphome-dehumidifier-controller.png
 photos: "https://photos.app.goo.gl/2Q6iRifWbn8ioNWV8"
@@ -49,8 +50,7 @@ whether the building has Wi-Fi to join.
 **Box A**, the controller — a Wemos ESP32 with a Sensirion SHT41 humidity
 sensor — reads the room, runs the deadband and the timers, and decides
 whether the dehumidifier should be running. It is low-voltage only and never
-goes near mains. A 3D-printable enclosure for this ESP32 + SHT41 combo is
-available on [MakerWorld](https://makerworld.com/en/models/3303615-esp32-sht41-ambient).
+goes near mains.
 
 **Box B**, the plug — a **Sonoff S31**, an ETL-listed smart plug — does the
 actual 120 VAC switching. Splitting the design this way keeps all mains
@@ -220,6 +220,6 @@ controller/plug pair) and a full README.
 [Release v1.0.0](https://github.com/blankschematic/esphome-dehumidifier-controller/releases/tag/v1.0.0)
 has pre-built firmware — flash it over serial, or straight from a browser with
 the included ESP Web Tools manifest. Bring your own Wi-Fi Sonoff S31 (or S31
-Lite) and an ESP32 with an SHT4x sensor — the S31 needs no case (it's already
-one), and a printable case for the ESP32 + SHT41 controller is on
-[MakerWorld](https://makerworld.com/en/models/3303615-esp32-sht41-ambient).
+Lite) and an ESP32 with an SHT4x sensor — the S31 needs no case, since it's
+already one; a printable case for the ESP32 + SHT41 controller is linked
+above.

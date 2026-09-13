@@ -28,6 +28,11 @@ Hugo static site deployed on Cloudflare Pages from a private GitHub repo.
 - Current in-progress: `mega-calculator-micropython.md`
 - When ready: change status to `complete`
 
+### Project Link Buttons
+- The row of buttons under the cover image (`.project-links` in `layouts/_default/single.html`) is driven entirely by optional frontmatter fields — add the URL as the field's value and the button appears automatically, no template edit needed: `github`, `github2` (+ `github2label`), `hackaday`, `youtube`, `makerworld`, `thingiverse`, `docs`, `photos`
+- **A 3D-printable case/part goes in `makerworld:` or `thingiverse:`, not an inline Markdown link in the body**
+- Hover colors are defined per-field in `static/css/main.css` (search `.proj-link-`) for `github`, `hackaday`, `youtube`, `makerworld`, `photos`; `thingiverse` and `docs` don't have a dedicated color yet and fall back to the default border
+
 ### github2label
 - When adding a `github2:` link to a project, also add `github2label: "descriptive name ↗"`
 - Default fallback label is "github (2) ↗" which is not very informative
