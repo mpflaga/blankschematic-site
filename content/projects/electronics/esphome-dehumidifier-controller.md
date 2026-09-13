@@ -14,7 +14,7 @@ summary: "A basement dehumidifier whose built-in control restarts the compressor
 
 ## The problem
 
-A dehumidifier’s built‑in humidistat is typically very limited, offering only a narrow control range and minimal configuration of setpoints. This project replaces that fixed control with a direct one: a deadband (hysteresis) you can set as wide or narrow as the space requires, a compressor hold‑off timer you control, and the safety features needed to run a dehumidifier unattended. The goal is to maximize performance, efficiency, and compressor life by giving you precise, adjustable management of the unit — on your terms rather than the original manufacture’s — enabling wider or finer operating ranges, customizable hysteresis, and proper compressor lockout timing.
+A dehumidifier's built-in humidistat is typically very limited, offering only a narrow control range and minimal configuration of setpoints. This project replaces that fixed control with a direct one: a deadband (hysteresis) you can set as wide or narrow as the space requires, a compressor hold-off timer you control, and the safety features needed to run a dehumidifier unattended. The goal is to maximize performance, efficiency, and compressor life by giving you precise, adjustable management of the unit — on your terms rather than the original manufacturer's — enabling wider or finer operating ranges, customizable hysteresis, and proper compressor lockout timing.
 
 ## The solution
 
