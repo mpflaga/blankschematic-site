@@ -14,19 +14,7 @@ summary: "A basement dehumidifier whose built-in control restarts the compressor
 
 ## The problem
 
-A dehumidifier's built-in humidistat is fairly basic: its setpoint has
-almost no adjustable range, and there's no way to shape how it cycles the
-compressor. In practice that shows up as short-cycling — the compressor
-restarts within seconds of shutting off, which wears it out (every start is
-an inrush surge and a high-head restart if the refrigerant pressures haven't
-equalized) and wastes energy holding a number tighter than most spaces need.
-
-This project replaces that fixed control with a direct one: a deadband
-(hysteresis) you set as wide or narrow as the space calls for, a compressor
-hold-off timer you control, and the safety features needed to run a
-dehumidifier unattended — aimed at getting the best operation, efficiency,
-and compressor life out of the unit, on your terms rather than the stock
-knob's.
+A dehumidifier’s built‑in humidistat is typically very limited, offering only a narrow control range and minimal configuration of setpoints. This project replaces that fixed control with a direct one: a deadband (hysteresis) you can set as wide or narrow as the space requires, a compressor hold‑off timer you control, and the safety features needed to run a dehumidifier unattended. The goal is to maximize performance, efficiency, and compressor life by giving you precise, adjustable management of the unit — on your terms rather than the original manufacture’s — enabling wider or finer operating ranges, customizable hysteresis, and proper compressor lockout timing.
 
 ## The solution
 
@@ -36,13 +24,13 @@ Two ESPHome boxes replace the built-in control: one reads humidity and runs a
 mains power. They talk over plain local HTTP — no Home Assistant, no MQTT, no
 broker, no cloud.
 
-It ships as three config pairs, for three different situations:
+Three complete solutions are provided as config pairs, for the three different situations:
 
 | Pair | Purpose | Guard rails |
 |---|---|---|
-| **Simple** | Reading the core mechanism — one small file per box | None |
-| **Full, Wi-Fi** | A real install on a network that already exists | Full |
-| **Full, isolated-link** | A real install in a building with no Wi-Fi at all | Full |
+| **Simple** | The basic mechanisms, meant for learning — one small file per each box | None |
+| **Full, Wi-Fi** | Fully functional for use with a Wi-Fi network that already exists | Full |
+| **Full, isolated-link** | Fully functional for use without any Wi-Fi at all | Full |
 
 The simple pair is deadband and timer only, meant to be read end to end. The
 two full pairs add the same set of guard rails described below and are
