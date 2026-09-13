@@ -9,7 +9,7 @@ github2label: "v1.0.0 — firmware & browser install ↗"
 status: complete
 cover: /images/projects/esphome-dehumidifier-controller.jpg
 photos: "https://photos.app.goo.gl/2Q6iRifWbn8ioNWV8"
-summary: "A basement dehumidifier whose built-in control restarts the compressor within 30 seconds of finishing a cycle. Two ESP boxes replace that with a wide, adjustable deadband and an anti-short-cycle timer — no Home Assistant, no cloud."
+summary: "A basement dehumidifier whose built-in control restarts the compressor within 30 seconds of finishing a cycle. Two ESP boxes replace that with a wide, adjustable deadband and an anti-short-cycle timer — no Home Assistant, no cloud. Now with a third, router-free config pair for buildings with no Wi-Fi at all."
 ---
 
 ## The problem
@@ -124,10 +124,119 @@ cycles under load means slower contact erosion.
   [test log](https://github.com/blankschematic/esphome-dehumidifier-controller/blob/main/TESTING.md)
   records what passed and what wasn't covered.
 
+## No Wi-Fi in the building? There's a variant for that now
+
+The setup above did its job — until the wrinkle every real install eventually
+throws at you: **the target buildings are vacant.** No occupants, no router,
+no Wi-Fi — the "join your home network" step the whole design assumed doesn't
+exist there. The original pair needs *some* Wi-Fi to talk to each other over,
+even if it's never used for anything else.
+
+So there's now a third config pair — `dehumidifier-controller-isolated.yaml` /
+`dehumidifier-plug-isolated.yaml` — that needs no router at all. Same
+deadband, same cool-off timer, same watchdog, same web UI. Only the network
+layer is different.
+
+### One box brings its own Wi-Fi
+
+Instead of both boxes joining a network that doesn't exist, one of them
+**becomes** the network. The other joins it directly. No internet, no router,
+no captive-portal onboarding dance — the link credentials are baked into the
+firmware at build time, because there's no "unknown Wi-Fi you'll hand this to
+a stranger" step to design around anymore; these are your two boxes, in your
+building. To manage the pair, you join *that* Wi-Fi network with a phone,
+same as joining any router — except this router is a Sonoff plug sitting in a
+basement.
+
+### The wrong way first
+
+The obvious layout: put the access point on the **controller** — it's the
+brain, it's the ESP32 with the beefier radio, it felt right. It compiled
+clean, it flashed clean, the AP came up, the plug joined it and got an IP.
+
+And then nothing talked. The controller's `Last command outcome` sat on
+`UNREACHABLE` forever, and its log was blunt about why:
+
+```text
+[E][http_request.idf:057]: HTTP Request failed; Not connected to network
+```
+
+Turns out ESPHome's `http_request` component flatly refuses to send anything
+unless the device has an active **station** (client) Wi-Fi connection — it
+doesn't count "I'm hosting an access point with clients on it" as being
+connected to a network. There's no config flag to override this; it's just how
+the component checks connectivity.
+
+The controller is the box that POSTs the relay commands. So the controller has
+to be the station. Which means the **plug** has to be the one hosting the
+access point:
+
+```text
+   phone ──┐  join the link Wi-Fi
+           ▼
+   ┌──────────────────┐   POST /switch/relay/…   ┌─────────────────────┐
+   │ Plug (S31)        │ ◀─────────────────────── │ Controller (ESP32)  │
+   │ hosts the AP       │                          │ joins as a station  │
+   │ web UI @ .4.1     │ ──────────────────────▶  │ web UI @ .4.2       │
+   └──────────────────┘   200 / 401 / timeout    └─────────────────────┘
+```
+
+Flip that, and it works. This is the kind of thing that's obvious in hindsight
+and invisible until you actually try it — which is the whole reason for
+writing it down here instead of just quietly fixing it.
+
+### Bench result
+
+Flashed both over serial, joined the link network with a phone:
+
+- Controller found the plug's access point, got its address, and every
+  ~20-second re-assert cycle came back `OK`.
+- Forced a threshold crossing (temporarily dropped the setpoints below the
+  actual room humidity) and watched the whole chain fire for real: desired
+  state flips, the plug's cool-off timer counts down, and once it clears, the
+  relay actually closes. Then reversed it and watched the relay drop again.
+- Added a signal-strength sensor to the controller's page (`Wi-Fi signal to
+  plug`, in dBm) so there's a real number to check once a pair is installed at
+  actual basement distance instead of sitting inches apart on a bench.
+
+The plug's own IP (`.4.1`) and the controller's (`.4.2`) are the isolated
+link's own self-hosted addresses, not a home network — they show up as-is
+below since that's exactly what the diagram above is describing:
+
+![Dehumidifier Plug web UI on the isolated link, showing the cool-off timer counting down after a bench-forced relay cycle](/images/projects/esphome-dehumidifier-isolated-plug-webui.png)
+
+![Dehumidifier Controller web UI joined to the plug's access point as a station, with the live log streaming HTTP request traffic](/images/projects/esphome-dehumidifier-isolated-controller-webui.png)
+
+Full write-up, wiring, and the "why" behind every decision is in the
+[README's isolated-link section](https://github.com/blankschematic/esphome-dehumidifier-controller#no-wi-fi-in-the-building-the-isolated-link-pair).
+The verification log — what's confirmed on hardware and what's still open — is
+in [TESTING.md](https://github.com/blankschematic/esphome-dehumidifier-controller/blob/main/TESTING.md).
+
+### What didn't need to change
+
+The deadband math, the anti-short-cycle timer, the compressor cool-off, the
+power-on delay, the stale-command watchdog, the auth — all of it is the exact
+same code as the router-based pair, byte for byte. It got pulled out into two
+shared files (`packages/controller-logic.yaml`, `packages/plug-logic.yaml`) so
+a future fix lands on both variants at once instead of needing to be
+copy-pasted a third time. The only new code is the two small network packages
+that decide who hosts and who joins.
+
+### Still open
+
+- Haven't yet pushed a firmware update *over* the isolated link itself (this
+  round of flashing was all over USB).
+- Haven't yet pulled the plug's power mid-test to confirm the controller's own
+  recovery access point comes up cleanly.
+
+Neither is a new risk — both reuse mechanisms already proven elsewhere in the
+project — just not yet watched happen on this specific pair.
+
 ## Getting it
 
 The [repo](https://github.com/blankschematic/esphome-dehumidifier-controller)
-has all four configs and a full README.
+has all six configs (router-based, simple, and isolated-link, each as a
+controller/plug pair) and a full README.
 [Release v1.0.0](https://github.com/blankschematic/esphome-dehumidifier-controller/releases/tag/v1.0.0)
 has pre-built firmware — flash it over serial, or straight from a browser with
 the included ESP Web Tools manifest. Bring your own Wi-Fi Sonoff S31 (or S31
