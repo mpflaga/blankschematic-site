@@ -100,9 +100,9 @@ The HA side is template switches that call a CGI script on the router via REST. 
 
 ## Presence and Arrival Automation
 
-The house knows when people come and go. When a family member arrives home, a notification fires. When a specific person arrives, the garage door opens automatically. These use HA's built-in zone system with phone GPS tracking.
+The house knows when people come and go. When a family member arrives home, a notification fires. When a specific person arrives, the garage door opens automatically via a [RATGDO](https://ratcloud.llc/products/ratgdo32)-based ESPHome controller, which also drives an outdoor keypad for PIN/tag entry — see the [Wiegand Keypad Garage Door](/projects/electronics/wiegand-keypad-garage/) project for the full build. These use HA's built-in zone system with phone GPS tracking.
 
-The family room uses an **mmWave presence sensor** (ESP32-based) rather than a simple PIR sensor. mmWave detects stationary occupancy — someone sitting still reading or watching TV — not just movement.
+The family room uses an **Everything Presence One mmWave sensor** (ESP32-based) rather than a simple PIR sensor. mmWave detects stationary occupancy — someone sitting still reading or watching TV — not just movement.
 
 ## Water and Appliance Monitoring
 
@@ -144,6 +144,6 @@ None of this is magic — it's a lot of small decisions made consistently. Every
 
 **The stack:**
 
-- **Hardware:** Raspberry Pi 4, SLZB-06 Zigbee coordinator, Shelly Plus 1 (ESPHome firmware), Sonoff S31, Tuya Zigbee sensors/buttons, Apollo mmWave sensors, ESPHome ESP32 devices
+- **Hardware:** Raspberry Pi 4, SLZB-06 Zigbee coordinator, Shelly Plus 1 (ESPHome firmware), Sonoff S31, Tuya Zigbee sensors/buttons, Everything Presence One mmWave sensor, ESPHome ESP32 devices
 - **Software:** Home Assistant OS 2026.3.2, ZHA integration, Zigbee2MQTT, ESPHome, Watchman
 - **Protocols:** Zigbee (primary), WiFi (Shelly/Sonoff/ESPHome), REST (router integration)
