@@ -521,6 +521,27 @@ a.tag:hover { opacity: 0.7; }
   margin: 0 0 1rem;
 }
 [data-theme="dark"] .project-content code { background: #2a2018; color: var(--bs-dark); }
+.project-content .compare-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  margin: 0 0 1rem;
+}
+.project-content .compare-row img {
+  max-width: 200px;
+  margin: 0;
+}
+.project-content .compare-vs {
+  font-family: var(--bs-mono);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--bs-mid);
+  flex: 0 0 auto;
+}
+@media (max-width: 560px) {
+  .project-content .compare-row { flex-direction: column; }
+}
 
 .project-content code {
   font-family: var(--bs-mono);

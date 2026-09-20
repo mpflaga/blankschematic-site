@@ -86,7 +86,7 @@ The office has more automation logic than any other room, built around one idea:
 
 **Reflected lighting** — four independently controllable LED strips pointed at the walls (East Warm, East White, West Warm, West White), tuned for different modes throughout the day.
 
-**Seat detection** — a pressure sensor under the chair feeds into a binary helper that tracks whether the seat is occupied. Sitting still at a desk doesn't generate much motion, so without the seat sensor, the lights would time out mid-work. The sensor is a custom mod — a battery-powered Zigbee door sensor with the reed switch replaced by a car seat airbag pressure sensor.
+**Seat detection** — a pressure sensor under the chair feeds into a binary helper that tracks whether the seat is occupied. Sitting still at a desk doesn't generate much motion, so without the seat sensor, the lights would time out mid-work. The sensor is a custom mod — a battery-powered Zigbee door sensor with its Hall-effect chip desoldered and a car-seat airbag pressure pad wired in its place. See the [Zigbee Chair Occupancy Sensor](/projects/electronics/zigbee-chair-occupancy-sensor/) project for the full teardown.
 
 **Guest Mode** — a house-wide toggle that shifts certain behaviors when company is over. Auto-expires at 2am so it's never accidentally left on overnight.
 
@@ -112,7 +112,7 @@ The family room uses an **mmWave presence sensor** (ESP32-based) rather than a s
 
 **Freezer temperature** — notification fires before food is at risk.
 
-**Toilet tank** — an automation watches for the tank to stop refilling within the expected window, catching a stuck flapper or running toilet. The sensor is another custom mod: a battery-powered Zigbee door sensor with its reed switch replaced by a float switch inside the tank. No wall power, just a small Zigbee device inside the tank lid.
+**Toilet tank** — an automation watches for the tank to stop refilling within the expected window, catching a stuck flapper or running toilet. The sensor is the same custom mod as the office chair: a battery-powered Zigbee door sensor with its Hall-effect chip desoldered and a float switch wired in its place. No wall power, just a small Zigbee device inside the tank lid.
 
 ## Holiday Automation
 
