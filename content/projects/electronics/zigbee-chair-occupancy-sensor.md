@@ -73,6 +73,10 @@ template:
 
 That occupancy state feeds a helper the office lighting automation checks alongside the PIR: motion **or** seat occupied keeps the lights on, only both going quiet starts the countdown to off. Sitting still no longer matters.
 
+## Office Time Tracker
+
+Each occupied and unoccupied log entry, along with the room's motion sensors, provides enough information to build a journal of accrued hours billable against a project. It starts billing when someone sits down and stops billing when they get up and the lights go out. This has enough of its own moving parts for a write-up someday; here it's just another consumer of the same occupied/vacant signal. See [Inside My Home Assistant Setup](/projects/home-assistant/home-assistant-overview/#the-office-a-room-that-pays-attention) for a bit more on how it's used.
+
 ## The same trick, twice more
 
 Once the mod exists, it's not really a chair sensor — it's a generic, battery-powered, Zigbee-connected N.O./N.C. input, and the same board has been reused for two other jobs around the house:
