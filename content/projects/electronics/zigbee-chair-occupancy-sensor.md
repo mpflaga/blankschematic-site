@@ -61,6 +61,16 @@ The mat itself is an awkward shape to place — thin, branching, and not somethi
 
 ![The pressure mat sealed inside the bag and set on the office chair, wired out to the modified Zigbee sensor](/images/projects/zigbee-chair-occupancy-sensor-pressure-mat-bagged.jpg)
 
+The raw entity still carries whatever `device_class` the Zigbee integration assigned it by default — the same as any other door/window sensor, since as far as the integration can tell, that's still what it is. A template binary sensor recasts it as `occupancy`, the correct class for a seat (or room, or desk) being occupied, so it gets the right icon and reads correctly on a dashboard:
+
+```yaml
+template:
+  - binary_sensor:
+      - name: "Office Chair Occupied"
+        device_class: occupancy
+        state: "{{ is_state('binary_sensor.office_chair_contact', 'on') }}"
+```
+
 That occupancy state feeds a helper the office lighting automation checks alongside the PIR: motion **or** seat occupied keeps the lights on, only both going quiet starts the countdown to off. Sitting still no longer matters.
 
 ## The same trick, twice more
