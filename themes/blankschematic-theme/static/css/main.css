@@ -539,6 +539,19 @@ a.tag:hover { opacity: 0.7; }
   color: var(--bs-mid);
   flex: 0 0 auto;
 }
+.project-content .compare-row figure {
+  margin: 0;
+  text-align: center;
+}
+.project-content .compare-row figure img {
+  max-width: 280px;
+  margin: 0 0 0.5rem;
+}
+.project-content .compare-row figcaption {
+  font-family: var(--bs-mono);
+  font-size: 13px;
+  color: var(--bs-mid);
+}
 @media (max-width: 560px) {
   .project-content .compare-row { flex-direction: column; }
 }

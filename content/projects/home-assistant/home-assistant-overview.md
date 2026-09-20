@@ -112,7 +112,7 @@ The family room uses an **mmWave presence sensor** (ESP32-based) rather than a s
 
 **Freezer temperature** — notification fires before food is at risk.
 
-**Toilet tank** — an automation watches for the tank to stop refilling within the expected window, catching a stuck flapper or running toilet. The sensor is the same custom mod as the office chair: a battery-powered Zigbee door sensor with its Hall-effect chip desoldered and a float switch wired in its place. No wall power, just a small Zigbee device inside the tank lid.
+**Toilet tank** — an automation watches for the tank to stop refilling within the expected window, catching a stuck flapper or running toilet, and a counter tallies flushes. The sensor is the same custom mod as the office chair: a battery-powered Zigbee door sensor with its Hall-effect chip desoldered and a float switch wired in its place, mounted on the tank's overflow tube with a 3D-printed clip. No wall power, just a small Zigbee device inside the tank lid. See the [Zigbee Toilet Flush Sensor](/projects/electronics/zigbee-toilet-flush-sensor/) project for the full write-up.
 
 ## Holiday Automation
 

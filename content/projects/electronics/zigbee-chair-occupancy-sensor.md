@@ -67,7 +67,7 @@ That occupancy state feeds a helper the office lighting automation checks alongs
 
 Once the mod exists, it's not really a chair sensor — it's a generic, battery-powered, Zigbee-connected N.O./N.C. input, and the same board has been reused for two other jobs around the house:
 
-- A **float switch** inside a toilet tank, watching for a fill cycle that runs longer than it should — see [Inside My Home Assistant Setup](/projects/home-assistant/home-assistant-overview/#water-and-appliance-monitoring).
+- A **float switch** inside a toilet tank, watching for a fill cycle that runs longer than it should — see the [Zigbee Toilet Flush Sensor](/projects/electronics/zigbee-toilet-flush-sensor/) for the full write-up.
 - A **water level probe** in the Christmas tree stand, reporting when the reservoir needs a refill.
 
 Same board, same two bare pads, a different passive contact wired to each — a reed switch, a pressure pad, a float switch, or anything else that just opens and closes a circuit.
