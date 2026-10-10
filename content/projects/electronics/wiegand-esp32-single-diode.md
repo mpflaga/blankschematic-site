@@ -4,6 +4,7 @@ date: 2026-08-25
 categories: [electronics, home-assistant]
 tags: [esp32, esphome, wiegand, level-shifting, ratgdo]
 status: complete
+cover: /images/projects/wiegand-esp32-single-diode-splash.jpg
 summary: "Wiegand data lines idle at 5V, and the ESP32 is not 5V-tolerant. You don't need a level-shifter IC or a resistor divider — a single signal diode does the job, and it does it better."
 ---
 
@@ -79,6 +80,17 @@ a diode passes exactly one direction. The high level, which is the part that wou
 hurt the ESP32, is the part the diode blocks.
 
 One 1N4148 per line. Two diodes total. No divider, no IC, no board.
+
+A confession about the title: it's really one diode *per data line* — `D0`
+gets one, `D1` gets another, so it's two in total. Rule number one: the title
+lies.
+
+A second confession, this one about the cover graphic above: the AI that
+generated it drew the little "how it works" legend panel with the diode
+backwards — triangle pointing the wrong way, anode and cathode labels on the
+swapped ends. The big circuit diagram at the top is correct; the small
+explainer panel isn't. Make of that what you will about an article whose
+entire point is that this polarity is easy to get backwards.
 
 ## The bonus you get for free
 
