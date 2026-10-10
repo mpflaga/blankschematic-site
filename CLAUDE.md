@@ -24,8 +24,8 @@ Hugo static site deployed on Cloudflare Pages from a private GitHub repo.
 - `status: in-progress` — visible in listings, shown with a WIP indicator
 - `status: complete` — fully published
 - `status: ongoing` — living projects that are always evolving (e.g. HA setup overview); shown in blue
-- Current drafts: `furnace-monitor.md` (placeholder content — needs real write-up)
-- Current in-progress: `mega-calculator-micropython.md`
+- Current drafts: none
+- Current in-progress: `mega-calculator-micropython.md`, `furnace-monitor.md` (LED blink-code decoding not implemented; pressure/filter-loading system is done)
 - When ready: change status to `complete`
 
 ### Project Link Buttons
