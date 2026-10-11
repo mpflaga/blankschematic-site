@@ -52,7 +52,7 @@ makes the logic easy to retune without reflashing.
 | MCU | ESP32 (`esp32dev`, WROOM-32) | Arduino framework, 160 MHz |
 | Pressure sensor | Sensirion **SDP810-500Pa** | I²C, address `0x25`, SDA GPIO16 / SCL GPIO17. Differential-pressure mode, read every 2 s. Factory-calibrated and temperature-compensated. |
 | Status-LED sensor | CdS photoresistor | Voltage divider: 3V3 → CdS → GPIO34, 10 kΩ to GND. Sampled every 50 ms. |
-| Furnace control board | Carrier CEPL131102 | Two status LEDs (LED1, LED2) sit close enough together that the CdS cell can't optically separate them, so it watches both as one combined signal. |
+| Furnace control board | Carrier CEPL131102 | The CdS cell is hot-glued directly to the control board's **Error Code LED** and covered by a slide-on, opaque length of heat-shrink tubing over the LED and the CdS, blocking ambient light so it only sees that one LED, not both. |
 | Thermostat | Honeywell/Resideo **T6 Pro** | HomeKit-connected. Reports only `heating` / `cooling` / `idle` via `hvac_action`, with no fan speed or fan mode. |
 
 Protoboard build, no schematic or PCB.
@@ -60,6 +60,11 @@ Protoboard build, no schematic or PCB.
 An earlier revision of the config ran I²C on GPIO21/22. Those pins were later
 retired as electrically damaged, which is why the sensor now sits on
 GPIO16/17.
+
+The CdS leaves the control board compartment on a red/black wire pair. A
+quick-disconnect splice there steps down to a pair of much thinner wires,
+which is what actually passes through the seal of the furnace's maintenance
+door to reach the ESP32.
 
 ![Furnace Monitor box mounted in the cabinet, next to the 16x24x1 filter slot it's monitoring](/images/projects/furnace-monitor-completed-mounting.jpg)
 
@@ -76,13 +81,15 @@ The first version of this monitor used an **MPX10DP** analog differential
 bridge sensor, read through an **HX711** 24-bit ADC. That combination needed
 a stored zero offset, an SHT40 to measure the sensor's own body temperature,
 and a temperature-coefficient correction to keep the zero point from
-drifting with ambient temperature. That's a lot of plumbing just to get a
+drifting with ambient temperature — and getting that correction right meant
+calibrating the sensor at multiple temperatures and pressures, work that's
+simply not needed with the SDP810. That's a lot of plumbing just to get a
 trustworthy number. The **SDP810** replaced all of it: it's a digital,
 factory-calibrated, temperature-compensated sensor that reports differential
 pressure directly over I²C. The zero-offset storage, the body-temperature
-sensor, and the drift correction all went away at once. The MPX10DP version
-is kept archived rather than deleted, in case the SDP810 ever needs comparing
-against it.
+sensor, the drift correction, and the multi-point calibration all went away
+at once. The MPX10DP version is kept archived rather than deleted, in case
+the SDP810 ever needs comparing against it.
 
 On the firmware side, the SDP810's native hPa reading comes out of the
 sensor with the sign flipped (see [Subtle features](#subtle-features)), then
@@ -103,8 +110,7 @@ distinct, repeatable levels:
 
 Pressure alone can't say *which* speed the blower is running at. A clogged
 filter raises the pressure at every speed, so a fixed Pa cutoff misclassifies
-speed as the filter loads (see
-[the bug below](#the-bug-the-experiment-caught)). Blower speed instead comes
+speed as the filter loads. Blower speed instead comes
 from the **thermostat**: `heating` or `cooling` in `hvac_action` means high
 speed, anything else means low. Pressure is only used to detect "blower off"
 (below 5 Pa). To avoid catching the furnace's pause-at-ignition dip and the
@@ -128,7 +134,7 @@ repo for this layer:
 | Filter DP Low Fan / High Fan | template sensors | Hold the last pressure reading once speed has been steady (180 s / 120 s) |
 | …24h Mean (×2) | statistics helpers | 24-hour mean of each speed's held reading |
 | Furnace Filter Loading | template sensor | 24h mean ÷ clean baseline, as a %, higher of the two speeds |
-| Blower Off During Heat Call | template binary sensor | Heat call active for more than 5 min with pressure below 5 Pa. A real safety fault: no airflow across the heat exchanger |
+| Blower Off During Heat Call | template binary sensor | Heat call active for more than 5 min with pressure below 5 Pa. No airflow during a heat call means the heat exchanger is overheating, which trips the control board's own high-limit switch and shuts the furnace down — a safe outcome for the equipment, but one that leaves the house cold. Currently heat-only — see [Not done yet](#not-done-yet) |
 | Baseline Low / High, Replace Threshold | input_number | Clean-filter reference values, plus the 200% alert threshold |
 | Filter Replaced | input_button + input_datetime | Pressed after a filter change; timestamps the swap |
 
@@ -170,7 +176,7 @@ instead of a guessed limit:
 1. A clean filter goes in **Oct 3–5**, with a baseline captured automatically 24 h after install.
 2. An old, used filter is swapped in from **Oct 5–10**.
 3. The good filter goes back in on **Oct 10**, and the fan-speed logic switches
-   to reading the thermostat (see [the bug below](#the-bug-the-experiment-caught)).
+   to reading the thermostat.
 4. An automatic baseline recapture runs **Oct 12 at 3 AM**, locking in the corrected
    numbers on the fixed logic.
 
@@ -207,33 +213,14 @@ recapture to close it out:
 
 ![Furnace dashboard's live test-plan card, showing the steps completed so far and the current step](/images/projects/furnace-monitor-test-plan.png)
 
-### The bug the experiment caught
-
-An earlier version of the Home Assistant logic classified blower speed by
-fixed pressure cutoffs: below 10 Pa off, 10–60 Pa low, above 60 Pa high. With
-the old filter installed, *low* speed ran at 104 Pa, above the "high"
-cutoff, so it was misclassified as high speed. The consequences:
-
-- The low-speed reading froze in place.
-- The high-speed average mixed circulate and heat-call readings together.
-- Filter loading read about **128%** instead of the real **~300%**.
-- The alert would never have fired.
-
-The flaw is basic: a clogged filter raises pressure at *every* speed, so
-pressure can't be the signal that tells you which speed you're at. The fix
-was switching speed detection to the thermostat's `hvac_action`, with
-pressure used only to detect "off" (described above). The raw pressure
-readings stayed intact in the history the whole time, which is how the real
-3× figure was recovered after the derived sensors had already shown the
-wrong value.
-
 ## Subtle features
 
 A few details that don't fall out of the config at a glance:
 
-- **Sign flip.** The pressure hoses landed on the sensor's ports such that a
-  loading filter read *negative*. `multiply: -1` in firmware corrects it
-  going forward; the already-recorded history was corrected in the database.
+- **Sign flip.** Which tubing run landed on which of the sensor's two ports
+  was arbitrary, and the pair that got connected happened to read a loading
+  filter as *negative* pressure. `multiply: -1` in firmware corrects it going
+  forward; the already-recorded history was corrected in the database.
 - **Baseline-deviation detection, not a fixed threshold.** LED1 on the
   control board is steady-on during normal operation, so a fixed brightness
   cutoff can't tell "normal" from "blinking." Instead the firmware tracks a
@@ -256,10 +243,18 @@ A few details that don't fall out of the config at a glance:
   the LED is blinking, but not the actual Carrier fault code. That decoding
   isn't implemented, and the 0.15 V deviation threshold hasn't been tuned or
   validated against a known blink code yet.
-- **A cooling-season data set.** All the pressure figures above are from
-  heating calls; cooling-call behavior hasn't been characterized.
+- **A cooling-season data set.** All the pressure figures above, including
+  the high-speed baseline, are from heating calls. The AC runs the blower at
+  a different speed than a heat call does, so that baseline doesn't actually
+  apply to cooling — AC will need its own calibration pass once there's a
+  cooling season to run it in.
 - **A second filter-life cycle**, to confirm the 200% threshold holds up over
   more than one replacement interval.
+- **No-airflow check during AC calls.** The blower-off safety check only
+  watches heat calls right now. The failure mode on the cooling side is
+  different — no airflow during a cooling call lets the evaporator coil ice
+  over instead of tripping a high-limit switch — but it's just as worth
+  catching, and isn't yet.
 
 ## Getting it
 
