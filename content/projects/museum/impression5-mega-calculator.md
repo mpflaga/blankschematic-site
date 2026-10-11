@@ -8,29 +8,29 @@ status: complete
 cover: /images/projects/impression5-mega-calculator.jpg
 photos: "https://photos.app.goo.gl/XNn8b7yQw7ESP8pJ8"
 docs: "https://docs.google.com/presentation/d/12m6RvQxXhAlx5gTluuJth5hYQA74dV7i/edit?usp=sharing&ouid=104702284015253160705&rtpof=true&sd=true"
-summary: "Arduino Mega replacement for Impression 5 Science Center's giant calculator exhibit — custom LED display and keypad controller using big-number arithmetic."
+summary: "Arduino Mega replacement for Impression 5 Science Center's giant calculator exhibit. Custom LED display and keypad controller using big-number arithmetic."
 ---
 
 ## Overview
 
 The [Impression 5 Science Center](https://impression5.org) in Lansing, MI operates an oversized calculator exhibit that lets visitors perform arithmetic on a human-scale input panel. This project is the Arduino Mega–based electronics replacement for that exhibit's controller.
 
-The original display electronics wore out and needed a from-scratch reimplementation. The new controller drives a custom LED display panel, reads a physical keypad, and handles big-number arithmetic — necessary because exhibit visitors happily type 15-digit numbers and expect correct results.
+The original display electronics wore out and needed a from-scratch reimplementation. The new controller drives a custom LED display panel, reads a physical keypad, and handles big-number arithmetic, necessary because exhibit visitors happily type 15-digit numbers and expect correct results.
 
 ## Architecture
 
 The firmware is split into focused modules:
 
-- **`LEDdisplay`** — drives the multi-digit LED display, mapping digits to segment outputs
-- **`Calculator`** — arithmetic engine; handles addition, subtraction, multiplication, and division
-- **`BigNumber`** — arbitrary-precision number representation (wraps a C big-integer library) so the display never overflows silently
-- **`Mega_Calculator.ino`** — top-level sketch wiring it all together
+- **`LEDdisplay`**: drives the multi-digit LED display, mapping digits to segment outputs
+- **`Calculator`**: arithmetic engine; handles addition, subtraction, multiplication, and division
+- **`BigNumber`**: arbitrary-precision number representation (wraps a C big-integer library) so the display never overflows silently
+- **`Mega_Calculator.ino`**: top-level sketch wiring it all together
 
 ## Hardware
 
-- **Arduino Mega 2560** — needed for the I/O count (keypad rows/columns + multiple display driver pins)
-- **LED 7-segment displays** — driven via the custom `LEDdisplay` module
-- **Physical keypad** — numeric digits 0–9, operators (+, −, ×, ÷), equals, clear
+- **Arduino Mega 2560**: needed for the I/O count (keypad rows/columns + multiple display driver pins)
+- **LED 7-segment displays**: driven via the custom `LEDdisplay` module
+- **Physical keypad**: numeric digits 0–9, operators (+, −, ×, ÷), equals, clear
 
 ## Companion PCB
 

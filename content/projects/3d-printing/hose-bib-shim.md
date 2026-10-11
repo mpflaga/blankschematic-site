@@ -6,7 +6,7 @@ tags: [thingiverse, plumbing, outdoor]
 thingiverse: "https://www.thingiverse.com/thing:6647128"
 cover: /images/projects/hose-bib-shim.jpg
 status: complete
-summary: "Printed shims to extend exterior hose bibs (sillcocks) away from recessed wall paneling — multiple depths included, with a removable wedge for retrofitting."
+summary: "Printed shims to extend exterior hose bibs (sillcocks) away from recessed wall paneling. Multiple depths included, with a removable wedge for retrofitting."
 ---
 
 ## Overview

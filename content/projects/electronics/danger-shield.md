@@ -1,5 +1,5 @@
 ---
-title: "Arduino Danger Shield — Learning PCB Redesign"
+title: "Arduino Danger Shield: Learning PCB Redesign"
 date: 2018-05-21
 categories: [electronics, arduino]
 tags: [pcb, eaglecad, education, stem, danger-shield, sparkfun, class]
@@ -7,12 +7,12 @@ github: "https://github.com/lansing-makers-network/LMN_Danger_Shield"
 docs: "https://docs.google.com/presentation/d/15lr8KB6GJmrQk3-LWpdrX4vdEVFVbdXA/edit?usp=sharing"
 cover: /images/projects/danger-shield.png
 status: complete
-summary: "Custom Arduino shield redesigned for an intro Arduino class after SparkFun discontinued the original Danger Shield — adds improved components and layout while keeping the same hands-on exercise set."
+summary: "Custom Arduino shield redesigned for an intro Arduino class after SparkFun discontinued the original Danger Shield. Adds improved components and layout while keeping the same hands-on exercise set."
 ---
 
 ## Overview
 
-The SparkFun Danger Shield was a popular learning board that plugged directly onto an Arduino UNO, giving beginners a rich set of inputs and outputs in one self-contained package. When SparkFun discontinued it, a replacement was designed with updated components and used as the foundation of a two-session intro Arduino class — one session to build it, one to program it.
+The SparkFun Danger Shield was a popular learning board that plugged directly onto an Arduino UNO, giving beginners a rich set of inputs and outputs in one self-contained package. When SparkFun discontinued it, a replacement was designed with updated components and used as the foundation of a two-session intro Arduino class: one session to build it, one to program it.
 
 ## Shield Components
 
@@ -28,13 +28,13 @@ The SparkFun Danger Shield was a popular learning board that plugged directly on
 
 ## The Class
 
-### Session 1 — Soldering
+### Session 1: Soldering
 
 Students assembled the shield from a bare PCB and components, making it a hands-on introduction to soldering for microelectronics. By the end of the session each student had a working shield ready for the next class.
 
-### Session 2 — Programming
+### Session 2: Programming
 
-The second session used a slide deck (linked above) to walk through each peripheral individually, with a standalone code exercise for each one — the exercise code is in the GitHub repository (linked above). The session culminated in combining everything into a single sketch that read multiple sensors and drove multiple outputs simultaneously — putting all the pieces together.
+The second session used a slide deck (linked above) to walk through each peripheral individually, with a standalone code exercise for each one. The exercise code is in the GitHub repository (linked above). The session culminated in combining everything into a single sketch that read multiple sensors and drove multiple outputs simultaneously, putting all the pieces together.
 
 ## Class Exercises
 
@@ -55,7 +55,7 @@ The second session stepped through each component as a standalone exercise:
 
 ## Beyond the Classroom
 
-The shield's sliders and buttons also make it a handy general-purpose controller. One fun application: using it to fly a [Syma toy helicopter](/projects/arduino/syma-helicopter-ir/) via IR — the three sliders map directly to throttle, yaw, and pitch.
+The shield's sliders and buttons also make it a handy general-purpose controller. One fun application: using it to fly a [Syma toy helicopter](/projects/arduino/syma-helicopter-ir/) via IR: the three sliders map directly to throttle, yaw, and pitch.
 
 ## Files
 

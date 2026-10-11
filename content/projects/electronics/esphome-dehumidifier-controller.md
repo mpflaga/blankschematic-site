@@ -5,37 +5,37 @@ categories: [electronics]
 tags: [esphome, esp32, esp8266, sonoff, humidistat, hvac]
 github: "https://github.com/blankschematic/esphome-dehumidifier-controller"
 github2: "https://github.com/blankschematic/esphome-dehumidifier-controller/releases/tag/v1.0.0"
-github2label: "v1.0.0 — firmware & browser install ↗"
+github2label: "v1.0.0: firmware & browser install ↗"
 makerworld: "https://makerworld.com/en/models/3303615-esp32-sht41-ambient"
 status: complete
 cover: /images/projects/esphome-dehumidifier-controller.png
 photos: "https://photos.app.goo.gl/2Q6iRifWbn8ioNWV8"
-summary: "A basement dehumidifier whose built-in control restarts the compressor within 30 seconds of finishing a cycle. Two ESPHome boxes replace that with a wide, adjustable deadband and an anti-short-cycle timer — no Home Assistant, no cloud. Ships as three config pairs: a learning-only simple pair, a full pair for a home Wi-Fi network, and a full pair for buildings with no Wi-Fi at all."
+summary: "A basement dehumidifier whose built-in control restarts the compressor within 30 seconds of finishing a cycle. Two ESPHome boxes replace that with a wide, adjustable deadband and an anti-short-cycle timer, no Home Assistant, no cloud. Ships as three config pairs: a learning-only simple pair, a full pair for a home Wi-Fi network, and a full pair for buildings with no Wi-Fi at all."
 ---
 
 ## The problem
 
-A dehumidifier's built-in humidistat is typically very limited, offering only a narrow control range and minimal configuration of setpoints. This project replaces that fixed control with a direct one: a deadband (hysteresis) you can set as wide or narrow as the space requires, a compressor hold-off timer you control, and the safety features needed to run a dehumidifier unattended. The goal is to maximize performance, efficiency, and compressor life by giving you precise, adjustable management of the unit — on your terms rather than the original manufacturer's — enabling wider or finer operating ranges, customizable hysteresis, and proper compressor lockout timing.
+A dehumidifier's built-in humidistat is typically very limited, offering only a narrow control range and minimal configuration of setpoints. This project replaces that fixed control with a direct one: a deadband (hysteresis) you can set as wide or narrow as the space requires, a compressor hold-off timer you control, and the safety features needed to run a dehumidifier unattended. The goal is to maximize performance, efficiency, and compressor life by giving you precise, adjustable management of the unit on your terms rather than the original manufacturer's, enabling wider or finer operating ranges, customizable hysteresis, and proper compressor lockout timing.
 
 ## The solution
 
 Two ESPHome boxes replace the built-in control: one reads humidity and runs a
 **wide, adjustable deadband** (on at 60 %RH, off at 50 %) plus an
 **anti-short-cycle minimum-off timer**; the other switches the dehumidifier's
-mains power. They talk over plain local HTTP — no Home Assistant, no MQTT, no
+mains power. They talk over plain local HTTP, with no Home Assistant, no MQTT, no
 broker, no cloud.
 
 Three complete solutions are provided as config pairs, for the three different situations:
 
 | Pair | Purpose | Guard rails |
 |---|---|---|
-| **Simple** | The basic mechanisms, meant for learning — one small file per each box | None |
+| **Simple** | The basic mechanisms, meant for learning: one small file per each box | None |
 | **Full, Wi-Fi** | Fully functional for use with a Wi-Fi network that already exists | Full |
 | **Full, isolated-link** | Fully functional for use without any Wi-Fi at all | Full |
 
 The simple pair is deadband and timer only, meant to be read end to end. The
 two full pairs add the same set of guard rails described below and are
-identical in every way except the network layer — pick whichever matches
+identical in every way except the network layer. Pick whichever matches
 whether the building has Wi-Fi to join.
 
 ## Architecture: two boxes, two jobs
@@ -47,17 +47,17 @@ whether the building has Wi-Fi to join.
                   runs the logic      enforces compressor limits
 ```
 
-**Box A**, the controller — a Wemos ESP32 with a Sensirion SHT41 humidity
-sensor — reads the room, runs the deadband and the timers, and decides
+**Box A**, the controller, is a Wemos ESP32 with a Sensirion SHT41 humidity
+sensor. It reads the room, runs the deadband and the timers, and decides
 whether the dehumidifier should be running. It is low-voltage only and never
 goes near mains.
 
-**Box B**, the plug — a **Sonoff S31**, an ETL-listed smart plug — does the
-actual 120 VAC switching. Splitting the design this way keeps all mains
+**Box B**, the plug, is a **Sonoff S31**, an ETL-listed smart plug that does
+the actual 120 VAC switching. Splitting the design this way keeps all mains
 wiring, fusing, and creepage distance inside a certified appliance; the S31's
 firmware gets replaced, but its high-voltage side is never opened.
 
-The S31 specifically because it hits every requirement at once: it's
+The S31 specifically, because it hits every requirement at once: it's
 **ETL-listed**, so the mains engineering is already done and certified; the
 ESP module inside is reachable through a header for reflashing **without
 cutting into or otherwise destructively modifying the case**; and it's cheap
@@ -65,11 +65,11 @@ enough that a certified, relay-switched, ESP-controlled outlet costs less
 than sourcing a bare relay and enclosure separately.
 
 The controller `POST`s `/switch/relay/turn_on` (or `turn_off`) to the plug
-every 20 seconds — not just on a change, so a plug reboot re-syncs within one
+every 20 seconds, not just on a change, so a plug reboot re-syncs within one
 cycle.
 
 The two boxes are only ever connected by Wi-Fi, never by wire, so they can be
-placed **anywhere within Wi-Fi range of each other** — not just side by side.
+placed **anywhere within Wi-Fi range of each other**, not just side by side.
 The controller (with its humidity sensor) can sit wherever the humidity
 actually needs measuring, while the plug stays wherever the dehumidifier
 lives, even a different room or floor.
@@ -82,14 +82,14 @@ compressor unattended:
 - **Compressor cool-off, enforced on the plug.** After the relay opens, the
   plug refuses any turn-on for a configurable window (default 5 min). This
   lives on the *plug*, not the controller, so a bug on the brain's side
-  cannot bypass it — the mains side protects the compressor independently.
+  cannot bypass it. The mains side protects the compressor independently.
 - **Power-on delay.** An ESP with no synced clock can't measure how long it
   was unpowered, so after the plug itself loses power, it holds off the
   first turn-on for a few minutes by default. A clearly-labelled "force"
   button on the plug's own page covers the "it's been off all night, just
   start it" case.
 - **Stale-command watchdog.** If the plug hasn't heard from the controller in
-  15 minutes, it forces the relay off — catching a dehumidifier stuck *on*
+  15 minutes, it forces the relay off, catching a dehumidifier stuck *on*
   because the brain died, on the mains side where it has to be caught.
 - Dead-sensor lockout, HTTP Basic auth on the relay endpoint, and a
   human-readable last-command status (`OK` / `AUTH FAILED` / `UNREACHABLE` /
@@ -101,14 +101,14 @@ The **Wi-Fi pair** joins the building's existing network and talks to each
 other over it, same as any two IoT devices on a LAN. Each box also raises its
 own hotspot and captive portal on first boot for onboarding.
 
-The **isolated-link pair** is for buildings with no router at all — vacant
-buildings, mainly. Instead of both boxes joining a network that doesn't
+The **isolated-link pair** is for buildings with no router at all, vacant
+buildings mainly. Instead of both boxes joining a network that doesn't
 exist, one of them **becomes** the network and the other joins it directly.
-There's no internet, no router, and no captive-portal onboarding dance —
-the link credentials are baked into the firmware at build time, since these
+There's no internet, no router, and no captive-portal onboarding dance.
+The link credentials are baked into the firmware at build time, since these
 are always your own two boxes, never an unknown network handed to a stranger.
 Managing the pair means joining that Wi-Fi network with a phone, same as
-joining any router — except this router is a Sonoff plug.
+joining any router, except this router is a Sonoff plug.
 
 The access point has to live on the **plug**, not the controller, even
 though the controller is the more capable radio. ESPHome's `http_request`
@@ -116,7 +116,7 @@ component only sends a request when the device has an active **station**
 (client) connection; it doesn't count "hosting an access point with clients
 on it" as being connected to a network, and there's no config flag to
 override that. Since the controller is the box that `POST`s the relay
-commands, it has to be the station — which puts the access point on the
+commands, it has to be the station, which puts the access point on the
 plug:
 
 ```text
@@ -136,9 +136,9 @@ Wired the other way around, the controller's `Last command outcome` sits on
 [E][http_request.idf:057]: HTTP Request failed; Not connected to network
 ```
 
-Everything else — the deadband math, the anti-short-cycle timer, the
+Everything else, the deadband math, the anti-short-cycle timer, the
 compressor cool-off, the power-on delay, the stale-command watchdog, the
-auth — is the exact same code as the Wi-Fi pair, byte for byte. It lives in
+auth, is the exact same code as the Wi-Fi pair, byte for byte. It lives in
 two shared files (`packages/controller-logic.yaml`,
 `packages/plug-logic.yaml`) so a fix lands on both network variants at once.
 The only code that differs between them is the two small network packages
@@ -174,7 +174,7 @@ is real.
 
 ![Dehumidifier Controller web UI, showing the deadband setpoints, live humidity reading, and plug IP field](/images/projects/esphome-dehumidifier-controller-webui.png)
 
-**Isolated-link pair** — `.4.1` and `.4.2` are the link's own self-hosted
+**Isolated-link pair:** `.4.1` and `.4.2` are the link's own self-hosted
 addresses, not a home network, which is why they're shown as-is rather than
 blurred:
 
@@ -192,14 +192,14 @@ including a dedicated
 A few details that don't fall out of the config at a glance:
 
 - The plug, not the controller, hosts the access point on the isolated-link
-  pair — a direct consequence of ESPHome's `http_request` requiring an
+  pair. That's a direct consequence of ESPHome's `http_request` requiring an
   active station connection (see above), not an arbitrary choice.
 - The controller's 20-second re-assert is idempotent by design: it resends
   the desired state on every cycle rather than only on a change, so a plug
   reboot resyncs on its own within one cycle instead of needing a nudge.
 - The compressor cool-off timer is enforced on the plug specifically so that
   a bug or a bad decision on the controller's side physically cannot
-  shorten it — the mains-side guard rail doesn't trust the brain.
+  shorten it. The mains-side guard rail doesn't trust the brain.
 - A Wi-Fi signal-strength sensor (`Wi-Fi signal to plug`, in dBm) on the
   controller's page gives a real number to check once a pair is installed at
   actual basement distance, rather than sitting inches apart on a bench.
@@ -209,7 +209,7 @@ A few details that don't fall out of the config at a glance:
   from the relay's manufacturer. Before wiring a real unit through it: check
   the dehumidifier's nameplate running current against the S31's label, and
   drive a properly-rated contactor from the S31 instead if it's anywhere
-  near the limit. The anti-short-cycle timer helps here too — fewer
+  near the limit. The anti-short-cycle timer helps here too, since fewer
   make/break cycles under load means slower contact erosion.
 
 ## Getting it
@@ -218,8 +218,8 @@ The [repo](https://github.com/blankschematic/esphome-dehumidifier-controller)
 has all six configs (simple, Wi-Fi, and isolated-link, each as a
 controller/plug pair) and a full README.
 [Release v1.0.0](https://github.com/blankschematic/esphome-dehumidifier-controller/releases/tag/v1.0.0)
-has pre-built firmware — flash it over serial, or straight from a browser with
+has pre-built firmware: flash it over serial, or straight from a browser with
 the included ESP Web Tools manifest. Bring your own Wi-Fi Sonoff S31 (or S31
-Lite) and an ESP32 with an SHT4x sensor — the S31 needs no case, since it's
+Lite) and an ESP32 with an SHT4x sensor. The S31 needs no case, since it's
 already one; a printable case for the ESP32 + SHT41 controller is linked
 above.

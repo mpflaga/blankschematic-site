@@ -5,16 +5,16 @@ categories: [networking, home-assistant]
 tags: [openwrt, nftables, parental-controls, firewall, rest, cgi, shell]
 cover: /images/projects/internet-curfew.webp
 status: complete
-summary: "Blocks internet access per-device on a schedule using OpenWRT nftables rules, with a Home Assistant dashboard toggle for manual overrides — no third-party apps or cloud dependency."
+summary: "Blocks internet access per-device on a schedule using OpenWRT nftables rules, with a Home Assistant dashboard toggle for manual overrides. No third-party apps or cloud dependency."
 ---
 
 ## Overview
 
-The problem: kids hiding under the covers with a tablet or sneaking downstairs to watch TV until 4 AM. The solution: cut the internet to their devices on a schedule, with a quick toggle on the parents' dashboard to restore or enforce it on demand — no negotiations, no excuses.
+The problem: kids hiding under the covers with a tablet or sneaking downstairs to watch TV until 4 AM. The solution: cut the internet to their devices on a schedule, with a quick toggle on the parents' dashboard to restore or enforce it on demand. No negotiations, no excuses.
 
-Built entirely local and cloud-free. OpenWRT enforces the actual firewall rules, and Home Assistant provides the dashboard toggle. No third-party app, no subscription, no calling home — just nftables, a small CGI script, and a REST sensor.
+Built entirely local and cloud-free. OpenWRT enforces the actual firewall rules, and Home Assistant provides the dashboard toggle. No third-party app, no subscription, no calling home, just nftables, a small CGI script, and a REST sensor.
 
-Rules target devices at **Layer 2 by MAC address**, which means they work regardless of IP assignment, VLAN membership, or connection type — a device is blocked whether it's on Wi-Fi, wired Ethernet, or roams between them, and DHCP lease renewals don't help.
+Rules target devices at **Layer 2 by MAC address**, which means they work regardless of IP assignment, VLAN membership, or connection type. A device is blocked whether it's on Wi-Fi, wired Ethernet, or roams between them, and DHCP lease renewals don't help.
 
 ## Curfew Groups
 
@@ -22,7 +22,7 @@ Rules target devices at **Layer 2 by MAC address**, which means they work regard
 |-------|------|----------|
 | Kids devices | Scheduled | 12 am–7 am nightly, 11 pm–midnight Sun–Thu, 8 am–3 pm Fridays |
 | Downstairs Roku | Scheduled | Same as above |
-| Teen's PC | Manual only | Blocked on demand — auto-disables at 7 am if left on |
+| Teen's PC | Manual only | Blocked on demand, auto-disables at 7 am if left on |
 | Family Room TV | Manual only | Same as Teen's PC |
 
 Scheduled groups are restored at boot. Manual-only groups are intentionally not re-enabled after a router reboot.
@@ -63,7 +63,7 @@ cat /dev/urandom | tr -dc 'A-F0-9' | head -c 64
 
 Use this key everywhere `YOUR_API_KEY` appears below. Keep it out of version control.
 
-### 2. MAC List File — `/usr/bin/curfew-macs.sh`
+### 2. MAC List File: `/usr/bin/curfew-macs.sh`
 
 All groups live in a single file. This is the only file you need to edit when adding or removing a device.
 
@@ -79,7 +79,7 @@ MACS_TV="{ aa:bb:cc:dd:ee:06 }"
 
 > **Important:** Each value must be in double quotes: `MACS_GROUP="{ aa:bb:... }"`. Without quotes, the shell treats `{` as a command group and the script fails silently.
 
-### 3. Enable Script — `/usr/bin/curfew-enable.sh`
+### 3. Enable Script: `/usr/bin/curfew-enable.sh`
 
 Sources the single MAC file, then sets `CURFEW_MACS`, `CHECK`, and `PREFIX` in one case branch. Scheduled groups get three time-window rules; manual groups get one unconditional block.
 
@@ -134,9 +134,9 @@ fi
 logger -t curfew "ENABLE: $GROUP done"
 ```
 
-### 4. Disable Script — `/usr/bin/curfew-disable.sh`
+### 4. Disable Script: `/usr/bin/curfew-disable.sh`
 
-Looks up each rule by its comment name and deletes by handle number — no hardcoded handles, survives reboots and rule reordering.
+Looks up each rule by its comment name and deletes by handle number. No hardcoded handles, survives reboots and rule reordering.
 
 ```sh
 #!/bin/sh
@@ -168,7 +168,7 @@ done
 logger -t curfew "DISABLE: $GROUP done"
 ```
 
-### 5. Status Script — `/usr/bin/curfew-status.sh`
+### 5. Status Script: `/usr/bin/curfew-status.sh`
 
 Returns `{"curfew":"on"}` or `{"curfew":"off"}` by checking whether the primary rule comment is present in the chain.
 
@@ -188,7 +188,7 @@ count=$(nft list chain inet fw4 forward | grep -c "$CHECK")
 [ "$count" -gt "0" ] && echo '{"curfew":"on"}' || echo '{"curfew":"off"}'
 ```
 
-### 6. HTTP API — `/www/cgi-bin/curfew`
+### 6. HTTP API: `/www/cgi-bin/curfew`
 
 A shell CGI served by `uhttpd`. Accepts POST with `action`, `group`, and `key`. A single endpoint handles all groups and all actions.
 
@@ -237,7 +237,7 @@ case "$ACTION" in
 esac
 ```
 
-### 7. Boot Persistence — `/etc/init.d/curfew-rules`
+### 7. Boot Persistence: `/etc/init.d/curfew-rules`
 
 Restores scheduled groups at boot. Manual-only groups are intentionally left off.
 
@@ -331,7 +331,7 @@ command_line:
       icon: mdi:shield-lock
 ```
 
-> **`!secret` won't work in the payload.** `!secret` is a YAML tag resolved at parse time; Jinja2 variables (`{{ action }}`, `{{ group }}`) are resolved at runtime. They cannot coexist in the same string — HA will literally send `key=!secret curfew_api_key` as plain text. The API key must be written directly in the payload. If that's a concern, revert to individual `rest_command` entries (one per group × action) which support `!secret` — at the cost of verbosity.
+> **`!secret` won't work in the payload.** `!secret` is a YAML tag resolved at parse time; Jinja2 variables (`{{ action }}`, `{{ group }}`) are resolved at runtime. They cannot coexist in the same string; HA will literally send `key=!secret curfew_api_key` as plain text. The API key must be written directly in the payload. If that's a concern, revert to individual `rest_command` entries (one per group × action) which support `!secret`, at the cost of verbosity.
 
 ### `templates.yaml`
 
@@ -356,7 +356,7 @@ One template switch per group, each reading from `sensor.curfew_status_all` attr
         - delay: {seconds: 1}
         - action: homeassistant.update_entity
           target: {entity_id: sensor.curfew_status_all}
-    # Repeat pattern for roku, teen, tv — substituting group name and unique_id
+    # Repeat pattern for roku, teen, tv, substituting group name and unique_id
 ```
 
 ### Automations
@@ -408,7 +408,7 @@ After editing, reload via **Developer Tools → YAML → Reload All YAML**.
 5. Add a dashboard tile card
 6. If manual-only, add a 7 am auto-disable automation
 
-No changes to `/etc/sysupgrade.conf` needed — the single MAC file is already listed.
+No changes to `/etc/sysupgrade.conf` needed; the single MAC file is already listed.
 
 ## Troubleshooting
 
@@ -416,5 +416,5 @@ No changes to `/etc/sysupgrade.conf` needed — the single MAC file is already l
 |---------|-------|
 | Rules not applying | Verify MAC values in `curfew-macs.sh` are quoted: `MACS_GROUP="{ aa:bb:... }"` |
 | Status always "off" | Confirm comment name in `curfew-status.sh` matches what `curfew-enable.sh` writes |
-| HA switch unavailable | Sensor hasn't polled yet — wait 60 s or call `homeassistant.update_entity` on `sensor.curfew_status_all` |
+| HA switch unavailable | Sensor hasn't polled yet; wait 60 s or call `homeassistant.update_entity` on `sensor.curfew_status_all` |
 | `scp` fails with "sftp-server not found" | Use `ssh root@router "cat > /path/file" < localfile` instead |

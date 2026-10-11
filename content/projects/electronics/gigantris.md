@@ -1,5 +1,5 @@
 ---
-title: "Gigantris — Oversized LED Tetris"
+title: "Gigantris: Oversized LED Tetris"
 date: 2016-11-01
 categories: [electronics, arduino]
 tags: [rgb, led, neopixel, wii, gaming, maker-faire, maker, parade]
@@ -11,7 +11,7 @@ summary: "Oversized playable Tetris built from 200 addressable RGB LEDs across a
 
 ## Overview
 
-Gigantris is a life-size playable Tetris — a 10×20 grid made from 200 addressable 6-LED RGB modules, controlled by an Arduino and a Wii Nunchuk with an extended cable. An internal power supply delivers up to 20 A at 12 V when the board is fully illuminated.
+Gigantris is a life-size playable Tetris: a 10×20 grid made from 200 addressable 6-LED RGB modules, controlled by an Arduino and a Wii Nunchuk with an extended cable. An internal power supply delivers up to 20 A at 12 V when the board is fully illuminated.
 
 Built to last and travel easily in a minivan, it was presented at [Detroit Maker Faire](https://maker-faire.maker-faire.com/maker/entry/1433/).
 

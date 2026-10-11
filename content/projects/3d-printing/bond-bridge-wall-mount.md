@@ -6,7 +6,7 @@ tags: [thingiverse, bond-bridge, rf, wall-mount]
 thingiverse: "https://www.thingiverse.com/thing:6654724"
 cover: /images/projects/bond-bridge-wall-mount.jpg
 status: complete
-summary: "Wall-mounted friction-fit holder for the Bond Bridge BD1000 RF blaster — quick mount and unmount to a wall panel for home automation use."
+summary: "Wall-mounted friction-fit holder for the Bond Bridge BD1000 RF blaster. Quick mount and unmount to a wall panel for home automation use."
 ---
 
 ## Overview

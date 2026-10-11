@@ -1,25 +1,25 @@
 ---
-title: "Christmas Tree Water Sensor Holder — Aqara Leak"
+title: "Christmas Tree Water Sensor Holder: Aqara Leak"
 date: 2023-12-10
 categories: [3d-printing, home-assistant]
 tags: [bambu, makerworld, aqara, zigbee, christmas]
 makerworld: "https://makerworld.com/en/models/2561520-christmas-tree-water-sensor-holder-aqara-leak"
 cover: /images/projects/xmas-tree-water-sensor-holder.png
 status: complete
-summary: "Clip-on holder turns an Aqara Water Leak Sensor into a Christmas tree bowl water level monitor — no more dry trees."
+summary: "Clip-on holder turns an Aqara Water Leak Sensor into a Christmas tree bowl water level monitor. No more dry trees."
 ---
 
 ## Overview
 
 A clip-on holder for an Aqara Water Leak Sensor that turns it into a Christmas tree stand water level monitor.
 
-The holder clips over the lip of a standard tree water bowl. A long tongue extends down into the water to a user-selected depth — this sets the low-water threshold. Two wires run from the Aqara sensor's detection screws, through a pair of holes in the tongue, down to the tip where they are stripped to expose bare metal. When the water level drops below the wire tips, the Aqara sensor triggers and sends a notification through Home Assistant or any Zigbee hub.
+The holder clips over the lip of a standard tree water bowl. A long tongue extends down into the water to a user-selected depth; this sets the low-water threshold. Two wires run from the Aqara sensor's detection screws, through a pair of holes in the tongue, down to the tip where they are stripped to expose bare metal. When the water level drops below the wire tips, the Aqara sensor triggers and sends a notification through Home Assistant or any Zigbee hub.
 
 The Aqara sensor snaps into the holder above the bowl rim, staying dry while the sensing is done by the extended wires below.
 
 ## Home Assistant Integration
 
-The Aqara reports "leak detected" when the wires are dry — the opposite of what you want to see on a dashboard. Create a Template Binary Sensor helper that inverts the signal, turning "leak detected" into "Bowl Has Water." This gives a clean, intuitive sensor state for dashboards and automations.
+The Aqara reports "leak detected" when the wires are dry, the opposite of what you want to see on a dashboard. Create a Template Binary Sensor helper that inverts the signal, turning "leak detected" into "Bowl Has Water." This gives a clean, intuitive sensor state for dashboards and automations.
 
 ```yaml
 template:

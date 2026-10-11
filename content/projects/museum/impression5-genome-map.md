@@ -9,7 +9,7 @@ github2label: "github (demo) ↗"
 status: complete
 cover: /images/projects/impression-5-genome-map.jpg
 photos: "https://photos.app.goo.gl/ZSywspWpcvun5nEw8"
-summary: "Interactive museum exhibit at Impression 5 Science Center — visitors use RFID tablets to explore botanical migration routes on a lit map, with green/red LED feedback guiding correct selections."
+summary: "Interactive museum exhibit at Impression 5 Science Center. Visitors use RFID tablets to explore botanical migration routes on a lit map, with green/red LED feedback guiding correct selections."
 ---
 
 ## Overview
@@ -25,18 +25,18 @@ The Genome Map exhibit at [Impression 5 Science Center](https://impression5.org)
 5. **Incorrect selections** flash red and remain interactive until the right region is chosen.
 6. Once the full migration path is identified, the completed route illuminates.
 
-An **idle timeout** detects when no one is interacting and causes regions to flash in a cycle — drawing in new visitors and encouraging participation.
+An **idle timeout** detects when no one is interacting and causes regions to flash in a cycle, drawing in new visitors and encouraging participation.
 
 ## Electronics
 
 The system is built around an Arduino with:
-- **RFID reader** — identifies which plant tablet is placed on the activation spot
-- **Capacitive or resistive touch inputs** — detect map region touches
-- **LED arrays** — per-region illumination for green/red feedback and path drawing
+- **RFID reader**: identifies which plant tablet is placed on the activation spot
+- **Capacitive or resistive touch inputs**: detect map region touches
+- **LED arrays**: per-region illumination for green/red feedback and path drawing
 
 ## Hardware Platform
 
-The PCB foundation is the **[Impression 5 SMASH Shield](https://github.com/mpflaga/Impression5-SMASH-Shield-Eagle)** — an Eagle CAD Arduino Mega shield designed specifically for Impression 5 exhibits, providing standardized connectors for display, input, and power wiring.
+The PCB foundation is the **[Impression 5 SMASH Shield](https://github.com/mpflaga/Impression5-SMASH-Shield-Eagle)**, an Eagle CAD Arduino Mega shield designed specifically for Impression 5 exhibits, providing standardized connectors for display, input, and power wiring.
 
 ## Repositories
 

@@ -1,5 +1,5 @@
 ---
-title: "Cellular SIM Tester — Digi WR21"
+title: "Cellular SIM Tester: Digi WR21"
 date: 2022-04-08
 categories: [networking, electronics]
 tags: [python, digi, cellular, sim, lcd, i2c, rotary-encoder, wr21]
@@ -7,7 +7,7 @@ github: "https://github.com/mpflaga/sim-tester-digi"
 cover: /images/projects/sim-tester-digi.jpg
 photos: "https://photos.app.goo.gl/NwSQ2LaEMxYaG8w69"
 status: complete
-summary: "Python tool for validating cellular SIM activation on a Digi WR21 router — auto-detects carrier, cycles through known APNs, and reports results via a 2-line I²C LCD with RGB rotary encoder interface."
+summary: "Python tool for validating cellular SIM activation on a Digi WR21 router. Auto-detects carrier, cycles through known APNs, and reports results via a 2-line I²C LCD with RGB rotary encoder interface."
 ---
 
 ## Overview
@@ -26,4 +26,4 @@ The open-source driver for the 2-line LCD display originally supported I²C in s
 
 ## Use Case
 
-SIM provisioning validation can be tedious when carrier APNs vary and activation status is opaque. This device automates the guesswork — insert the SIM, and the tester walks through the known APN list for that carrier until a data connection is confirmed or all options are exhausted.
+SIM provisioning validation can be tedious when carrier APNs vary and activation status is opaque. This device automates the guesswork: insert the SIM, and the tester walks through the known APN list for that carrier until a data connection is confirmed or all options are exhausted.

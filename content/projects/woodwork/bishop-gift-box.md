@@ -5,21 +5,21 @@ categories: [woodwork]
 tags: [carpentry, gift, handcrafted, keepsake]
 status: complete
 cover: /images/projects/bishop-gift-box.jpg
-summary: "Handcrafted walnut presentation box with finger-jointed corners, flocked cedar interior, and custom mounts for four silver candlesticks and a copy of Les Misérables — a gift marking the ordination of Bishop Robert J. McClory."
+summary: "Handcrafted walnut presentation box with finger-jointed corners, flocked cedar interior, and custom mounts for four silver candlesticks and a copy of Les Misérables. A gift marking the ordination of Bishop Robert J. McClory."
 photos: "https://photos.app.goo.gl/gKcJRQk28cZSv5bCA"
 ---
 
 ## Overview
 
-A handcrafted wooden box built to present four silver candlesticks and a copy of *Les Misérables* — offered as a gift on the occasion of the ordination of **The Most Reverend Robert J. McClory** as Bishop of Gary, Indiana on February 11, 2020.
+A handcrafted wooden box built to present four silver candlesticks and a copy of *Les Misérables*, offered as a gift on the occasion of the ordination of **The Most Reverend Robert J. McClory** as Bishop of Gary, Indiana on February 11, 2020.
 
 The gift was presented on behalf of the Ascenzo, Flaga, Mullins, and Stonehill families.
 
 ## The Symbolism
 
-The pairing of *Les Misérables* with candlesticks is drawn directly from one of the novel's most enduring scenes — the Bishop of Digne offering his silver candlesticks to Jean Valjean, an act of unconditional grace that sets the entire story in motion. It is a moment that distills the virtues of mercy, compassion, and redemption into a single gesture.
+The pairing of *Les Misérables* with candlesticks is drawn directly from one of the novel's most enduring scenes: the Bishop of Digne offering his silver candlesticks to Jean Valjean, an act of unconditional grace that sets the entire story in motion. It is a moment that distills the virtues of mercy, compassion, and redemption into a single gesture.
 
-The gift was chosen to reflect those same values as Reverend McClory stepped into his role as bishop — a life of service guided by the same light the candlesticks represent.
+The gift was chosen to reflect those same values as Reverend McClory stepped into his role as bishop, a life of service guided by the same light the candlesticks represent.
 
 ## Construction
 

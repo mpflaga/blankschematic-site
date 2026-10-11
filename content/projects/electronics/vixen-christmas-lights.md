@@ -1,18 +1,18 @@
 ---
-title: "Vixen Christmas Light Controller — Arduino Mega Daisy Chain"
+title: "Vixen Christmas Light Controller: Arduino Mega Daisy Chain"
 date: 2014-11-28
 categories: [electronics]
 tags: [arduino, vixen, christmas, lighting, maker, serial]
 github: "https://gist.github.com/mpflaga/b93d8375a10af06143b2"
 status: complete
-summary: "Arduino Mega sketch for sequenced Christmas lights using Vixen lighting software — supports daisy-chaining multiple Arduinos for up to 51 channels per board via serial passthrough."
+summary: "Arduino Mega sketch for sequenced Christmas lights using Vixen lighting software. Supports daisy-chaining multiple Arduinos for up to 51 channels per board via serial passthrough."
 ---
 
 ## Overview
 
 [Vixen Lights](http://www.vixenlights.com/) is free PC software for sequencing Christmas light displays to music. It sends channel data over serial to a controller, which maps the channels to output pins driving relay boards or SSRs.
 
-This sketch turns an **Arduino Mega 2560** into a Vixen controller with support for daisy-chaining multiple boards — so a large display can use more channels than a single Arduino provides.
+This sketch turns an **Arduino Mega 2560** into a Vixen controller with support for daisy-chaining multiple boards, so a large display can use more channels than a single Arduino provides.
 
 ## How It Works
 

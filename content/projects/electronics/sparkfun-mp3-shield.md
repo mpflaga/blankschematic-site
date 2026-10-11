@@ -6,7 +6,7 @@ tags: [mp3, library, maker, spi, sparkfun, vs1053]
 github: "https://github.com/mpflaga/Sparkfun-MP3-Player-Shield-Arduino-Library"
 cover: /images/projects/sparkfun-mp3-shield.webp
 status: complete
-summary: "The original non-blocking, interrupt-driven Arduino library for the SparkFun MP3 Player Shield (VS1053) — superseded by the generalized vs1053_for_SdFat library."
+summary: "The original non-blocking, interrupt-driven Arduino library for the SparkFun MP3 Player Shield (VS1053). Superseded by the generalized vs1053_for_SdFat library."
 ---
 
 ## Overview

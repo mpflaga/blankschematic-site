@@ -5,7 +5,7 @@ categories: [electronics, micropython]
 tags: [neopixel, maker, calculator, esp32, raspberry-pi-pico]
 github: "https://github.com/mpflaga/Mega_Calculator_MicroPython"
 status: in-progress
-summary: "MicroPython rewrite of the Impression 5 giant calculator — 9-digit NeoPixel 7-segment display with 20 physical buttons, running on ESP32 or Raspberry Pi Pico."
+summary: "MicroPython rewrite of the Impression 5 giant calculator. 9-digit NeoPixel 7-segment display with 20 physical buttons, running on ESP32 or Raspberry Pi Pico."
 ---
 
 ## Overview
@@ -14,20 +14,20 @@ This is a MicroPython port of the [Impression 5 Giant Calculator](https://github
 
 ## Hardware
 
-- **MicroPython board** — ESP32 or Raspberry Pi Pico (configurable)
-- **261 NeoPixel LEDs** — arranged in a 7-segment format to form a 9-digit display
-- **20 push buttons** — numeric keys (0–9), operators, equals, and clear
+- **MicroPython board**: ESP32 or Raspberry Pi Pico (configurable)
+- **261 NeoPixel LEDs**: arranged in a 7-segment format to form a 9-digit display
+- **20 push buttons**: numeric keys (0–9), operators, equals, and clear
 
-The NeoPixel 7-segment approach means the display can show any color per segment — useful for status indications, highlighting input, or adding visual flair beyond what fixed-segment LED modules allow.
+The NeoPixel 7-segment approach means the display can show any color per segment, useful for status indications, highlighting input, or adding visual flair beyond what fixed-segment LED modules allow.
 
 ## Architecture
 
 The codebase is split into modules to separate concerns:
 
-- `display.py` — NeoPixel segment mapping and digit rendering
-- `calculator.py` — arithmetic state machine (operands, operators, result)
-- `buttons.py` — GPIO input handling
-- `config.py` — pin assignments and display layout parameters (customize here for your hardware)
+- `display.py`: NeoPixel segment mapping and digit rendering
+- `calculator.py`: arithmetic state machine (operands, operators, result)
+- `buttons.py`: GPIO input handling
+- `config.py`: pin assignments and display layout parameters (customize here for your hardware)
 
 ## Testing Without Hardware
 
@@ -35,7 +35,7 @@ A **serial console mode** lets you test the calculator logic via terminal withou
 
 ## Key Difference from Arduino Version
 
-The Arduino version uses a C++ big-integer library (`BigNumber`) to support arbitrary precision — important for an exhibit where visitors type very long numbers. The MicroPython version relies on Python floats, which limits precision to approximately 15–17 significant digits. This is a known trade-off; Python's `decimal` module could be used to restore arbitrary precision if needed.
+The Arduino version uses a C++ big-integer library (`BigNumber`) to support arbitrary precision, important for an exhibit where visitors type very long numbers. The MicroPython version relies on Python floats, which limits precision to approximately 15–17 significant digits. This is a known trade-off; Python's `decimal` module could be used to restore arbitrary precision if needed.
 
 ## Installation
 

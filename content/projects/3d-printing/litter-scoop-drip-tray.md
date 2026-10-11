@@ -6,7 +6,7 @@ tags: [thingiverse, pet, kitten]
 thingiverse: "https://www.thingiverse.com/thing:6654715"
 cover: /images/projects/litter-scoop-drip-tray.jpg
 status: complete
-summary: "Printed secondary scoop that cradles the litter scoop during transport — catches droppings that would otherwise fall through the wire tines on the way to the toilet."
+summary: "Printed secondary scoop that cradles the litter scoop during transport. Catches droppings that would otherwise fall through the wire tines on the way to the toilet."
 ---
 
 ## Overview

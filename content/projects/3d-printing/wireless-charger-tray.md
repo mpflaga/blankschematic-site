@@ -1,17 +1,17 @@
 ---
-title: "Wireless Phone Charger Cradle — Samsung S10 / S22"
+title: "Wireless Phone Charger Cradle: Samsung S10 / S22"
 date: 2024-06-08
 categories: [3d-printing]
 tags: [thingiverse, fusion360, phone, nightstand]
 thingiverse: "https://www.thingiverse.com/thing:6654575"
 cover: /images/projects/wireless-charger-tray.jpg
 status: complete
-summary: "Printed nightstand cradle for Samsung S10/S22 wireless charging — self-aligns the phone's charging antenna to prevent overnight misalignment."
+summary: "Printed nightstand cradle for Samsung S10/S22 wireless charging. Self-aligns the phone's charging antenna to prevent overnight misalignment."
 ---
 
 ## Overview
 
-A wireless charging cradle for the Samsung S10 and S22, designed to sit on a nightstand. The cradle geometry guides the phone to self-align with the charger's antenna when dropped in — solving the common problem of waking up to a phone that spent the night just barely out of alignment.
+A wireless charging cradle for the Samsung S10 and S22, designed to sit on a nightstand. The cradle geometry guides the phone to self-align with the charger's antenna when dropped in, solving the common problem of waking up to a phone that spent the night just barely out of alignment.
 
 ## Charger
 
